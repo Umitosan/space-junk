@@ -15,27 +15,18 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 export class D3mainComponent implements OnInit {
   private d3: D3; // <-- Define the private member which will hold the d3 reference
   private parentNativeElement: any;
-  satellites: FirebaseListObservable<any[]>;
+  satellites: any[];
   readyToDisplay: boolean = false;
   desiredFilter: string = "none";
   masterRad: number = 0;
 
-  satData: any[] = [
-    { name: 'Spuntik 1', owner: 'Russia', rad:  1.5, speed: 7, cx: 115, cy: 0, move: true },
-    { name: 'Mir', owner: 'Russia', rad: 15, speed: 14, cx: 150, cy: 0, move: true },
-    { name: 'Skylab', owner: 'USA', rad:  3.5, speed: 2, cx: 183, cy: 0, move: true },
-    { name: 'ISS', owner: 'UN', rad: 3.5, speed: 4, cx: 237, cy: 0, move: true },
-    { name: 'Telstar', owner: 'USA', rad:  6.8, speed: 5, cx: 385, cy: 0, move: true },
-    { name: 'Explorer 1', owner: 'USA', rad: 5.3, speed: 6, cx: 294, cy: 0, move: true },
-    { name: 'Chandrayaan 1', owner: 'India', rad: 3.8, speed: 15, cx: 400, cy: 0, move: true },
-    { name: 'NOAA', owner: 'USA', rad: 4.2, speed: 22, cx: 125, cy: 0, move: true },
-    { name: 'Uhuru', owner: 'USA', rad: 20, speed: 40, cx: 125, cy: 0, move: false }
-  ];
+  satData: any[] = [];
   newObject = null;
   running = true;
 
 
-  constructor(element: ElementRef, d3Service: D3Service,
+  constructor(element: ElementRef,
+              d3Service: D3Service,
               private router: Router,
               private database: AngularFireDatabase,
               private satelliteService: SatelliteService) {
@@ -50,10 +41,41 @@ export class D3mainComponent implements OnInit {
                 d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method
                 // Do more D3 things
               }
-              this.satellites = this.satelliteService.getSatellites();
+              this.satelliteService.getSatellites().subscribe(data => {
+                this.satellites = data;
+                // this.createSatData(data);
+              });
+  }
+
+  createSatData(sats) {
+    let myArr: any[] = [];
+    for (let i = 0; i < sats.length ; i++) {
+      let randSpeed: number = this.getRandomNum(3,20);
+      let randRad: number = this.getRandomNum(2,20);
+      let randCx: number = this.getRandomNum(100,500);
+      let newSat = {  name: sats[i].Name , owner: sats[i].OperatorOwner,
+                      rad: randRad, speed: randSpeed,  cx: randCx, cy: 0, move: true }
+      myArr.push(newSat);
+    }
+    this.satData = myArr;
+    console.log("myArr", myArr);
+    // public Name: string,
+    // public CountryOperatorOwner: string,
+    // public OperatorOwner: string,
+    // public Users: string,
+    // public Purpose: string,
+    // public ApogeeKM: number,
+    // public LaunchMassKG: number,
+    // public DateOfLaunch: string,
+    // public LaunchSite: string
+  } // <-- end createSatData
+
+  getRandomNum(min, max) {
+    return Math.random() * (max - min) + min;
   }
 
   funkButtonClicked() {
+    this.createSatData(this.satellites)
     this.mainFunk(this.d3, this.satData, this.newObject, this.running);
   }
 
@@ -68,7 +90,6 @@ export class D3mainComponent implements OnInit {
   }
 
   mainFunk(d3, sd, newo, run) {
-
     let satData = sd;
     let newObject = newo;
     let running = run;

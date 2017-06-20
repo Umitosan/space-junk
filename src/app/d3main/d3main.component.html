@@ -23,7 +23,7 @@
 </div>
 
   <div *ngIf="readyToDisplay === true" id="mainResults">
-    <div *ngFor="let sat of satellites | async | country:desiredFilter">
+    <div *ngFor="let sat of satellites | country:desiredFilter">
       <div class="">
         <p> {{sat.Name}} - {{sat.CountryOperatorOwner}}</p>
       </div>
