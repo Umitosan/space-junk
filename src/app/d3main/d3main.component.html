@@ -2,18 +2,26 @@
 <div class="container">
   <h1>Satellites are Aweseome!</h1>
 
-  <button class="btn btn-success" (click)="funkButtonClicked()" >Funk</button>
-  <button class="btn btn-info" (click)="stopButtonClicked()" >Stop</button>
+  <button class="btn btn-success" (click)="funkButtonClicked()">Start</button>
+  <button class="btn btn-info" (click)="stopButtonClicked()">Stop</button>
 
   <div id="test-div"></div>
 
+  <p>Filter Satellites </p>
+  <select (change)="onChange($event.target.value)">
+    <option value="none" selected="selected">None</option>
+    <option value="Multinational">Multinational</option>
+  </select>
+  <br>
+  <br>
+
   <svg>
-    <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
+    <svg:circle class="earth" cx="500" cy="100" r="35"></svg:circle>
     <svg:circle class="start"></svg:circle>
   </svg>
 
   <div *ngIf="readyToDisplay === true" id="mainResults">
-    <div *ngFor="let sat of satellites | async | country:desiredCountry">
+    <div *ngFor="let sat of satellites | async | country:desiredFilter">
       <div class="">
         <p> {{sat.Name}} - {{sat.CountryOperatorOwner}}</p>
         <br>
@@ -22,6 +30,9 @@
   </div>
 
 </div>
+
+<app-d3output>Loading...</app-d3output>
+
 
 <!-- public Name: string,
 public CountryOperatorOwner: string,

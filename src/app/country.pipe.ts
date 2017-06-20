@@ -7,22 +7,22 @@ import { Satellite } from './satellite.model';
 })
 export class CountryPipe implements PipeTransform {
 
-  transform(input: Satellite[], desiredCountry){
+  transform(input: Satellite[], desiredFilter){
     console.log("pipe ran");
+
     var output: Satellite[] = [];
     if (input !== null) {
+      console.log("filter:" ,desiredFilter);
 
-      if(desiredCountry === 'Multinational') {
+      if(desiredFilter === 'Multinational') {
         for (var i = 0; i < input.length; i++) {
           if (input[i].CountryOperatorOwner === 'Multinational' ) {
             output.push(input[i]);
           }
         }
-        return output;
-      } else {
-        return input;
       }
     }
+    return output;
   }
 
 }
