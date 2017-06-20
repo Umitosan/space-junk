@@ -31,7 +31,7 @@ export class D3mainComponent implements OnInit {
       let d3 = this.d3; // <-- for convenience use a block scope variable
       let d3ParentElement: Selection<any, any, any, any>; // <-- Use the Selection interface (very basic here for illustration only)
       if (this.parentNativeElement !== null) {
-        d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method
+      d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method
         // Do more D3 things
       this.satellites = this.satelliteService.getSatellites();
       // this.satToDisplay = this.satelliteService.getSatelliteById('0');
@@ -44,14 +44,52 @@ export class D3mainComponent implements OnInit {
 
   funkButtonClicked() {
     this.readyToDisplay = true;
+    this.mainFunk(this.d3);
+  }
+
+  mainFunk(d3) {
+
+    let svg = d3.select("svg");
+
+    let satData = [
+      { rad:  5, speed: 5.5, phi0: 100, cx: 100, cy: -100 },
+      { rad:  10, speed: 3, phi0: 100, cx: 170, cy: -80 },
+      { rad:  20, speed: 1, phi0: 100, cx: 350, cy: -40 }
+    ];
+
+    //for each item in satData create a new satelite circle element
+    let satelite = svg.selectAll(".start")
+        .data(satData, function(d, i) { return (i); } )
+        .attr("class", "satelite");
+
+    satelite.enter().append("circle")
+        .attr("class", "satelite");
+
+    let allSatelites = svg.selectAll(".satelite")
+    allSatelites.attr("cx", function(d) { return d.cx; });
+    allSatelites.attr("cy", function(d) { return d.cy; });
+    allSatelites.attr("r", function(d) { return d.rad; });
+
+    let masterRad = 0;
+
+    function updateAnim() {
+      svg.selectAll(".satelite").attr("transform", function(d) {
+        return "translate(500,500), rotate(" + d.phi0 + masterRad * d.speed + ")";
+      });
+      if (masterRad === 360) {
+        masterRad = 0;
+      }
+      masterRad += 1;
+      console.log(masterRad);
+    }
+
+    d3.timer(updateAnim);
+
   }
 
   // myFunk() {
     // this.d3.select("#test-div").append("div").html("<h1>FIRST LINE</h1>  <h2>SECOND LINE</h2>")
   // }
-
-
-
 
   // readyToDisplay() {
   //   return this.display;
