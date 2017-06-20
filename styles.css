@@ -11,7 +11,7 @@ svg {
 
 .satelite {
   stroke : #000000;
-  /*fill : #b3b3b3;*/
+  fill: steelblue;
 }
 
 .earth {

@@ -1,12 +1,14 @@
 var satData = [
-  { rad:  1.5, speed: 7, phi0: 90, cx: 115, cy: 0 },
-  { rad: 15, speed: 1, phi0: 90, cx: 150, cy: 0 },
-  { rad:  3.5, speed: 2, phi0: 90, cx: 183, cy: 0 },
-  { rad: 3.5, speed: 4, phi0: 90, cx: 237, cy: 0 },
-  { rad:  6.8, speed: 5, phi0: 90, cx: 385, cy: 0 },
-  { rad: 5.3, speed: 6, phi0: 90, cx: 294, cy: 0 },
-  { rad: 3.8, speed: 15, phi0: 90, cx: 400, cy: 0 },
-  { rad: 4.2, speed: 22, phi0: 90, cx: 125, cy: 0 } ];
+  { rad:  1.5, speed: 7, phi0: 90, cx: 115, cy: 0, move: true },
+  { rad: 15, speed: 14, phi0: 90, cx: 150, cy: 0, move: true },
+  { rad:  3.5, speed: 2, phi0: 90, cx: 183, cy: 0, move: true },
+  { rad: 3.5, speed: 4, phi0: 90, cx: 237, cy: 0, move: true },
+  { rad:  6.8, speed: 5, phi0: 90, cx: 385, cy: 0, move: true },
+  { rad: 5.3, speed: 6, phi0: 90, cx: 294, cy: 0, move: true },
+  { rad: 3.8, speed: 15, phi0: 90, cx: 400, cy: 0, move: true },
+  { rad: 4.2, speed: 22, phi0: 90, cx: 125, cy: 0, move: true },
+  { rad: 20, speed: 40, phi0: 90, cx: 125, cy: 0, move: false }
+];
 
 var newObject = null;
 
@@ -26,9 +28,6 @@ function mainFunk() {
   allSatelites.attr("cx", function(d) { return d.cx; });
   allSatelites.attr("cy", function(d) { return d.cy; });
   allSatelites.attr("r", function(d) { return d.rad; });
-
-
-  d3.selectAll("circle").style("fill", "rgb(" + (Math.random() * 256) + "," + (Math.random() * 256) + "," + (Math.random() * 256) + ")");
 
 
   var masterRad = 0;
@@ -55,7 +54,12 @@ function mainFunk() {
 
 
     svg.selectAll(".satelite").attr("transform", function(d) {
-      return "translate(500,500), rotate(" + masterRad * d.speed/100 + ")";
+      if (d.move === true) {
+        return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
+      } else {
+        return "translate(500,500)";
+      }
+
     });
     if (masterRad === 10000) {
       masterRad = 0;
@@ -65,6 +69,26 @@ function mainFunk() {
   }
 
   d3.timer(updateAnim);
+
+  allSatelites.on("mouseover", displayData);
+  allSatelites.on("mouseout", hideData);
+
+  function displayData(){
+    d3.select(this).style("stroke", "black").style("stroke-width", 5);
+    for (var i = 0; i<satData.length; i++)	{
+  		var thisData = satData[i];
+  		console.log(thisData);
+  	}
+
+
+  };
+
+  function hideData(){
+    d3.select(this).style("stroke", "black").style("stroke-width", 1)
+    .transition()
+      .delay(0)
+      .duration(0);
+  };
 
 }
 
@@ -83,7 +107,7 @@ $(document).ready(function(){
     var phiInput = parseFloat($("input#phi").val());
     var cxInput = parseFloat($("input#cx").val());
     var cyInput = parseFloat($("input#cy").val());
-    newObject = { rad:  radInput, speed: speedInput, phi0: phiInput, cx: cxInput, cy: cyInput };
+    newObject = { rad:  radInput, speed: speedInput, phi0: phiInput, cx: cxInput, cy: cyInput, move: true };
     satData.push(newObject);
     // mainFunk();
   });
