@@ -11,6 +11,7 @@ var satData = [
 ];
 
 var newObject = null;
+var running = true;
 
 function mainFunk() {
 
@@ -34,7 +35,6 @@ function mainFunk() {
 
   function updateAnim() {
 
-
     if (newObject != null) {
 
       var satelite = svg.selectAll(".start")
@@ -52,7 +52,6 @@ function mainFunk() {
       newObject = null;
     }
 
-
     svg.selectAll(".satelite").attr("transform", function(d) {
       if (d.move === true) {
         return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
@@ -64,30 +63,31 @@ function mainFunk() {
     if (masterRad === 10000) {
       masterRad = 0;
     }
-    masterRad += 1;
-    // console.log(masterRad);
+
+    if (running === true) {
+      masterRad += 1;
+    }
+
   }
 
-  d3.timer(updateAnim);
+  var runningFunction = updateAnim
+  d3.timer(runningFunction);
 
   allSatelites.on("mouseover", displayData);
   allSatelites.on("mouseout", hideData);
 
   function displayData(){
     d3.select(this).style("stroke", "black").style("stroke-width", 5);
-    for (var i = 0; i<satData.length; i++)	{
-  		console.log(satData[i]['move']=false);
-  	};
-    var currentMasterRad = masterRad;
-
+    // for (var i = 0; i<satData.length; i++)	{
+  	// 	console.log(satData[i]['move']=false);
+  	// };
+    running = false;
 
   };
 
   function hideData(){
     d3.select(this).style("stroke", "black").style("stroke-width", 1);
-    for (var i = 0; i<satData.length; i++)	{
-  		console.log(satData[i]['move']=true);
-  	};
+    running = true;
   };
 
 }
