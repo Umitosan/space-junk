@@ -7,7 +7,8 @@ var satData = [
   { name: 'Explorer 1', owner: 'USA', rad: 5.3, speed: 6, cx: 294, cy: 0, move: true },
   { name: 'Chandrayaan 1', owner: 'India', rad: 3.8, speed: 15, cx: 400, cy: 0, move: true },
   { name: 'NOAA', owner: 'USA', rad: 4.2, speed: 22, cx: 125, cy: 0, move: true },
-  { name: 'Uhuru', owner: 'USA', rad: 20, speed: 40, cx: 125, cy: 0, move: false }
+  { name: 'Uhuru', owner: 'USA', rad: 20, speed: 40, cx: 125, cy: 0, move: false },
+  { name: 'Test Satelite', owner: 'Ken', rad: 35, speed: 40, cx: 450, cy: 0, move: true }
 ];
 
 var newObject = null;
@@ -28,43 +29,60 @@ function mainFunk() {
       .attr("class", "satelite");
 
   var allSatelites = svg.selectAll(".satelite")
-  allSatelites.attr("cx", function(d) { return d.cx; });
-  allSatelites.attr("cy", function(d) { return d.cy; });
-  allSatelites.attr("r", function(d) { return d.rad; });
+  // allSatelites.attr("cx", function(d) { return d.cx; });
+  // allSatelites.attr("cy", function(d) { return d.cy; });
+  // allSatelites.attr("r", function(d) { return d.rad; });
 
-  // allSatelites.attrs({
-  //   cx: function (d) { return d.cx; },
-  //   cy: function (d) { return d.cy; },
-  //   r:  function (d) { return d.rad; }
-  // });
+  allSatelites.attrs({
+    cx: function (d) { return d.cx; },
+    cy: function (d) { return d.cy; },
+    r:  function (d) { return d.rad; }
+  });
+
+  allSatelites.style("fill", function(d) {
+    if(d.owner === 'USA') {
+      return "steelblue";
+    } else if (d.owner === 'Russia') {
+      return "red";
+    } else if (d.owner === 'UN') {
+      return "white";
+    }
+  });
 
 
-  // selection.styles(function(d) { return {fill: "red", stroke: d.stroke}; });
+  //This works with the d3 extension d3-selection-multi which has been added to the htmml file's head.
+
+
+
 
   var masterRad = 0;
 
   function updateAnim() {
 
+    //This function will add a new satelite into the orbit of the planet:
     if (newObject != null) {
-
       var satelite = svg.selectAll(".start")
           .data(satData, function(d, i) { return (i); } )
           .enter().append("circle")
           .attr("class", "satelite");
-
       var allSatelites = svg.selectAll(".satelite")
-      allSatelites.attr("cx", function(d) { return d.cx; });
-      allSatelites.attr("cy", function(d) { return d.cy; });
-      allSatelites.attr("r", function(d) { return d.rad; });
+      // allSatelites.attr("cx", function(d) { return d.cx; });
+      // allSatelites.attr("cy", function(d) { return d.cy; });
+      // allSatelites.attr("r", function(d) { return d.rad; });
+      allSatelites.attrs({
+        cx: function (d) { return d.cx; },
+        cy: function (d) { return d.cy; },
+        r:  function (d) { return d.rad; }
+      });
 
       newObject = null;
     }
 
     svg.selectAll(".satelite").attr("transform", function(d) {
       if (d.move === true) {
-        return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
+        return "translate(750,750), rotate(" + (masterRad * d.speed/100) + ")";
       } else {
-        return "translate(500,500)";
+        return "translate(750,750)";
       }
 
     });
@@ -82,9 +100,9 @@ function mainFunk() {
 
   allSatelites.on("mouseover", function(d) {
     d3.select(this)
-    .style("stroke", "black").style("stroke-width", 5);
-
-
+    .style("stroke", "gold")
+    .style("stroke-width", 3)
+    // .style("fill", "white");
 
     running = false;
     console.log(d);
@@ -100,7 +118,10 @@ function mainFunk() {
 
 
   function hideData(){
-    d3.select(this).style("stroke", "black").style("stroke-width", 1);
+    d3.select(this)
+    .style("stroke", "black")
+    .style("stroke-width", 1)
+    // .style("fill", "steelblue");
     running = true;
     // for (var i = 0; i<satData.length; i++)	{
     // 	console.log(satData[i]['move']=false);
@@ -122,12 +143,13 @@ $(document).ready(function(){
 
   $('#submit-form').submit(function(event){
     event.preventDefault();
+    var nameInput = $("input#satName").val();
+    var ownerInput = $("input#satOwner").val();
     var radInput = parseFloat($("input#rad").val());
     var speedInput = parseFloat($("input#speed").val());
-    var phiInput = parseFloat($("input#phi").val());
     var cxInput = parseFloat($("input#cx").val());
     var cyInput = parseFloat($("input#cy").val());
-    newObject = { rad:  radInput, speed: speedInput, phi0: phiInput, cx: cxInput, cy: cyInput, move: true };
+    newObject = { name: nameInput, owner: ownerInput, rad:  radInput, speed: speedInput, cx: cxInput, cy: cyInput, move: true };
     satData.push(newObject);
     // mainFunk();
   });
