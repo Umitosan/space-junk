@@ -17,33 +17,41 @@ export class D3mainComponent implements OnInit {
   private parentNativeElement: any;
   satellites: FirebaseListObservable<any[]>;
   readyToDisplay: boolean = false;
-  desiredCountry: string = "Multinational";
+  desiredFilter: string = "none";
+  masterRad: number = 0;
 
   constructor(element: ElementRef, d3Service: D3Service,
               private router: Router,
               private database: AngularFireDatabase,
               private satelliteService: SatelliteService) {
-    this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
-    this.parentNativeElement = element.nativeElement;
+        this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
+        this.parentNativeElement = element.nativeElement;
   }
 
   ngOnInit() {
-      let d3 = this.d3; // <-- for convenience use a block scope variable
-      let d3ParentElement: Selection<any, any, any, any>; // <-- Use the Selection interface (very basic here for illustration only)
-      if (this.parentNativeElement !== null) {
-        d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method
-        // Do more D3 things
-      }
-      this.satellites = this.satelliteService.getSatellites();
+              let d3 = this.d3; // <-- for convenience use a block scope variable
+              let d3ParentElement: Selection<any, any, any, any>; // <-- Use the Selection interface (very basic here for illustration only)
+              if (this.parentNativeElement !== null) {
+                d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method
+                // Do more D3 things
+              }
+              this.satellites = this.satelliteService.getSatellites();
   }
 
   funkButtonClicked() {
-    this.readyToDisplay = true;
-    this.mainFunk(this.d3);
+
+    // this.mainFunk(this.d3);
   }
 
-  stopButtonClicked() {
-    this.readyToDisplay = false;
+  // stopButtonClicked() {
+  //   this.readyToDisplay = false;
+  // }
+
+  onChange(dropdownOption) {
+    this.desiredFilter = dropdownOption;
+    this.readyToDisplay = true;
+    console.log("dropdownOption changed to: ", this.desiredFilter);
+    // this.readyToDisplay = true;
   }
 
   mainFunk(d3) {
@@ -51,9 +59,9 @@ export class D3mainComponent implements OnInit {
     let svg = d3.select("svg");
 
     let satData = [
-      { rad:  5, speed: 5.5, phi0: 100, cx: 100, cy: -100 },
-      { rad:  10, speed: 3, phi0: 100, cx: 170, cy: -80 },
-      { rad:  20, speed: 1, phi0: 100, cx: 350, cy: -40 }
+      { rad:  5, speed: 0.9, phi0: 100, cx: 50, cy: 0 },
+      { rad:  10, speed: 0.6, phi0: 100, cx: 70, cy: 0 },
+      { rad:  20, speed: 0.3, phi0: 100, cx: 100, cy: 0 }
     ];
 
     //for each item in satData create a new satelite circle element
@@ -73,13 +81,13 @@ export class D3mainComponent implements OnInit {
 
     function updateAnim() {
       svg.selectAll(".satelite").attr("transform", function(d) {
-        return "translate(500,500), rotate(" + d.phi0 + masterRad * d.speed + ")";
+        return "translate(500,100), rotate(" + d.phi0 + masterRad * d.speed + ")";
       });
-      if (masterRad === 360) {
+      if (masterRad === 3600000) {
         masterRad = 0;
       }
       masterRad += 1;
-      console.log(masterRad);
+      // console.log(masterRad);
     }
     d3.timer(updateAnim);
   }
