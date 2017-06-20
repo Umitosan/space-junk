@@ -76,18 +76,18 @@ function mainFunk() {
   function displayData(){
     d3.select(this).style("stroke", "black").style("stroke-width", 5);
     for (var i = 0; i<satData.length; i++)	{
-  		var thisData = satData[i];
-  		console.log(thisData);
-  	}
+  		console.log(satData[i]['move']=false);
+  	};
+    var currentMasterRad = masterRad;
 
 
   };
 
   function hideData(){
-    d3.select(this).style("stroke", "black").style("stroke-width", 1)
-    .transition()
-      .delay(0)
-      .duration(0);
+    d3.select(this).style("stroke", "black").style("stroke-width", 1);
+    for (var i = 0; i<satData.length; i++)	{
+  		console.log(satData[i]['move']=true);
+  	};
   };
 
 }
