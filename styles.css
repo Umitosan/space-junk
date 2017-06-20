@@ -1,0 +1,32 @@
+svg {
+  width: 1000px;
+  height: 1000px;
+}
+
+
+.orbit {
+  stroke : #000000;
+  fill : none;
+}
+
+.satelite {
+  stroke : #000000;
+  /*fill : #b3b3b3;*/
+}
+
+.earth {
+  stroke : #000000;
+  fill : #ffcc00;
+}
+
+#myBtn {
+  margin-left: 40px;
+  margin-top: 40px;
+  float: left;
+}
+
+#anotherOne {
+  margin-left: 20px;
+  margin-top: 40px;
+  float: left;
+}
