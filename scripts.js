@@ -1,13 +1,13 @@
 var satData = [
-  { name: 'Spuntik', owner: 'Russia', rad:  1.5, speed: 7, phi0: 90, cx: 115, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad: 15, speed: 14, phi0: 90, cx: 150, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad:  3.5, speed: 2, phi0: 90, cx: 183, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad: 3.5, speed: 4, phi0: 90, cx: 237, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad:  6.8, speed: 5, phi0: 90, cx: 385, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad: 5.3, speed: 6, phi0: 90, cx: 294, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad: 3.8, speed: 15, phi0: 90, cx: 400, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad: 4.2, speed: 22, phi0: 90, cx: 125, cy: 0, move: true },
-  { name: 'Spuntik', owner: 'Russia', rad: 20, speed: 40, phi0: 90, cx: 125, cy: 0, move: false }
+  { name: 'Spuntik 1', owner: 'Russia', rad:  1.5, speed: 7, cx: 115, cy: 0, move: true },
+  { name: 'Mir', owner: 'Russia', rad: 15, speed: 14, cx: 150, cy: 0, move: true },
+  { name: 'Skylab', owner: 'USA', rad:  3.5, speed: 2, cx: 183, cy: 0, move: true },
+  { name: 'ISS', owner: 'UN', rad: 3.5, speed: 4, cx: 237, cy: 0, move: true },
+  { name: 'Telstar', owner: 'USA', rad:  6.8, speed: 5, cx: 385, cy: 0, move: true },
+  { name: 'Explorer 1', owner: 'USA', rad: 5.3, speed: 6, cx: 294, cy: 0, move: true },
+  { name: 'Chandrayaan 1', owner: 'India', rad: 3.8, speed: 15, cx: 400, cy: 0, move: true },
+  { name: 'NOAA', owner: 'USA', rad: 4.2, speed: 22, cx: 125, cy: 0, move: true },
+  { name: 'Uhuru', owner: 'USA', rad: 20, speed: 40, cx: 125, cy: 0, move: false }
 ];
 
 var newObject = null;
@@ -32,6 +32,14 @@ function mainFunk() {
   allSatelites.attr("cy", function(d) { return d.cy; });
   allSatelites.attr("r", function(d) { return d.rad; });
 
+  // allSatelites.attrs({
+  //   cx: function (d) { return d.cx; },
+  //   cy: function (d) { return d.cy; },
+  //   r:  function (d) { return d.rad; }
+  // });
+
+
+  // selection.styles(function(d) { return {fill: "red", stroke: d.stroke}; });
 
   var masterRad = 0;
 
@@ -73,7 +81,11 @@ function mainFunk() {
   d3.timer(updateAnim);
 
   allSatelites.on("mouseover", function(d) {
-    d3.select(this).style("stroke", "black").style("stroke-width", 5);
+    d3.select(this)
+    .style("stroke", "black").style("stroke-width", 5);
+
+
+
     running = false;
     console.log(d);
     div.transition()
