@@ -33,11 +33,11 @@ function mainFunk() {
   // allSatelites.attr("cy", function(d) { return d.cy; });
   // allSatelites.attr("r", function(d) { return d.rad; });
 
-  allSatelites.attrs({
-    cx: function (d) { return d.cx; },
-    cy: function (d) { return d.cy; },
-    r:  function (d) { return d.rad; }
-  });
+  // allSatelites.attrs({
+  //   cx: function (d) { return d.cx; },
+  //   cy: function (d) { return d.cy; },
+  //   r:  function (d) { return d.rad; }
+  // });
 
   allSatelites.style("fill", function(d) {
     if(d.owner === 'USA') {
@@ -50,6 +50,20 @@ function mainFunk() {
   });
 
 
+  allSatelites.attrs({
+    cx: 0,
+    cy: 0,
+    r:  function (d) { return d.rad; }
+  });
+
+  allSatelites.attr("transform", function(d) {
+    d3.select(this)
+    .transition()
+      .delay(0)
+      .duration(1000)
+      .attr("cx", d.cx)
+      .attr("cy", d.cy);
+  });
   //This works with the d3 extension d3-selection-multi which has been added to the htmml file's head.
 
 
