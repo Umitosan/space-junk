@@ -7,6 +7,7 @@ svg {
   height: 1000px;
 }
 
+
 .orbit {
   stroke : #000000;
   fill : none;
@@ -17,7 +18,7 @@ svg {
 }
 .earth {
   stroke : #000000;
-  fill : #ffcc00;
+  fill :  #2fb229;
 }
 
 #myBtn {
