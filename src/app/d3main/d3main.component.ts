@@ -17,7 +17,7 @@ export class D3mainComponent implements OnInit {
   private parentNativeElement: any;
   satellites: FirebaseListObservable<any[]>;
   readyToDisplay: boolean = false;
-  satToDisplay: any;
+  desiredCountry: string = "Multinational";
 
   constructor(element: ElementRef, d3Service: D3Service,
               private router: Router,
@@ -31,20 +31,19 @@ export class D3mainComponent implements OnInit {
       let d3 = this.d3; // <-- for convenience use a block scope variable
       let d3ParentElement: Selection<any, any, any, any>; // <-- Use the Selection interface (very basic here for illustration only)
       if (this.parentNativeElement !== null) {
-      d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method
+        d3ParentElement = d3.select(this.parentNativeElement); // <-- use the D3 select method
         // Do more D3 things
+      }
       this.satellites = this.satelliteService.getSatellites();
-      // this.satToDisplay = this.satelliteService.getSatelliteById('0');
-      this.satelliteService.getSatelliteById('0').subscribe(dataLastEmittedFromObserver => {
-        this.satToDisplay = dataLastEmittedFromObserver;
-      })
-
-    }
   }
 
   funkButtonClicked() {
     this.readyToDisplay = true;
     this.mainFunk(this.d3);
+  }
+
+  stopButtonClicked() {
+    this.readyToDisplay = false;
   }
 
   mainFunk(d3) {
@@ -82,21 +81,7 @@ export class D3mainComponent implements OnInit {
       masterRad += 1;
       console.log(masterRad);
     }
-
     d3.timer(updateAnim);
-
   }
-
-  // myFunk() {
-    // this.d3.select("#test-div").append("div").html("<h1>FIRST LINE</h1>  <h2>SECOND LINE</h2>")
-  // }
-
-  // readyToDisplay() {
-  //   return this.display;
-  // }
-
-  // getOneSat() {
-  //   return this.satelliteService.getSatelliteById('0');
-  // }
 
 }

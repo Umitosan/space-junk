@@ -19,10 +19,7 @@ export class SatelliteService {
   getSatelliteById(someid: string){
     return this.database.object('/satellites/' + someid);
   }
-  
-  // getSatelliteById(satelliteId: string){
-  //   return this.database.object('/satellites/' + satelliteId);
-  // }
+
 
 }
 

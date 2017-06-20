@@ -13,6 +13,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { D3mainComponent } from './d3main/d3main.component';
+import { D3outputComponent } from './d3output/d3output.component';
+import { CountryPipe } from './country.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,7 +26,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    D3mainComponent     // <-- declaration of the D3 Test component used below
+    D3mainComponent,
+    D3outputComponent,
+    CountryPipe     // <-- declaration of the D3 Test component used below
   ],
   imports: [
     BrowserModule,

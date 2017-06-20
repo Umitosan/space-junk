@@ -1,0 +1,223 @@
+{  "satellites" : [
+  {
+    "Name": "AAUSat-4",
+    "CountryOperatorOwner": "Denmark",
+    "OperatorOwner": "University of Aalborg",
+    "Users": "Civil",
+    "Purpose": "Earth Observation",
+    "ApogeeKM": 687,
+    "LaunchMassKG": 1,
+    "DateOfLaunch": "4/25/2016",
+    "LaunchSite": "Guiana Space Center"
+  },
+  {
+    "Name": "ABS-2 (Koreasat-8, ST-3)",
+    "CountryOperatorOwner": "Multinational",
+    "OperatorOwner": "Asia Broadcast Satellite Ltd.",
+    "Users": "Commercial",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,793",
+    "LaunchMassKG": "6,330",
+    "DateOfLaunch": "2/6/2014",
+    "LaunchSite": "Guiana Space Center"
+  },
+  {
+    "Name": "ABS-2A",
+    "CountryOperatorOwner": "Multinational",
+    "OperatorOwner": "Asia Broadcast Satellite Ltd.",
+    "Users": "Commercial",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,700",
+    "LaunchMassKG": "1,800",
+    "DateOfLaunch": "6/15/2016",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "ABS-3 (Agila 2, Mabuhay 1)",
+    "CountryOperatorOwner": "Multinational",
+    "OperatorOwner": "Asia Broadcast Satellite Ltd.",
+    "Users": "Commercial",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,802",
+    "LaunchMassKG": "3,775",
+    "DateOfLaunch": "8/19/1997",
+    "LaunchSite": "Xichang Satellite Launch Center"
+  },
+  {
+    "Name": "ABS-3A",
+    "CountryOperatorOwner": "Multinational",
+    "OperatorOwner": "Asia Broadcast Satellite Ltd.",
+    "Users": "Commercial",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,803",
+    "LaunchMassKG": "2,000",
+    "DateOfLaunch": "3/2/2015",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "ABS-4 (ABS-2i, MBSat, Mobile Broadcasting Satellite, Han Byul)",
+    "CountryOperatorOwner": "Multinational",
+    "OperatorOwner": "Asia Broadcast Satellite Ltd.",
+    "Users": "Commercial",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,793",
+    "LaunchMassKG": "4,143",
+    "DateOfLaunch": "3/13/2004",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "ABS-6 (ABS-1, LMI-1, Lockheed Martin-Intersputnik-1)",
+    "CountryOperatorOwner": "Multinational",
+    "OperatorOwner": "Asia Broadcast Satellite Ltd.",
+    "Users": "Commercial",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,794",
+    "LaunchMassKG": "2,894",
+    "DateOfLaunch": "9/26/1999",
+    "LaunchSite": "Baikonur Cosmodrome"
+  },
+  {
+    "Name": "ABS-7 (Koreasat 3, Mugungwha 3)",
+    "CountryOperatorOwner": "Multinational",
+    "OperatorOwner": "Asia Broadcast Satellite Ltd.",
+    "Users": "Commercial",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,791",
+    "LaunchMassKG": "3,500",
+    "DateOfLaunch": "9/4/1999",
+    "LaunchSite": "Guiana Space Center"
+  },
+  {
+    "Name": "Advanced Orion 2 (Mentor, NROL 6, USA 139)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "National Reconnaissance Office (NRO)",
+    "Users": "Military",
+    "Purpose": "Earth Observation",
+    "ApogeeKM": "36,013",
+    "LaunchMassKG": "4,500",
+    "DateOfLaunch": "5/9/1998",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "Advanced Orion 3 (Mentor, NROL 19, USA 171)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "National Reconnaissance Office (NRO)",
+    "Users": "Military",
+    "Purpose": "Earth Observation",
+    "ApogeeKM": "35,984",
+    "LaunchMassKG": "4,500",
+    "DateOfLaunch": "9/9/2003",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "Advanced Orion 4 (Mentor, NRO L-26, USA 202)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "National Reconnaissance Office (NRO)",
+    "Users": "Military",
+    "Purpose": "Earth Observation",
+    "ApogeeKM": "35,937",
+    "LaunchMassKG": "5,000",
+    "DateOfLaunch": "1/18/2009",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "Advanced Orion 5 (Mentor, NRO L-32, USA 223)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "National Reconnaissance Office (NRO)",
+    "Users": "Military",
+    "Purpose": "Earth Observation",
+    "ApogeeKM": "35,500",
+    "LaunchMassKG": "5,000",
+    "DateOfLaunch": "11/21/2010",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "Advanced Orion 6 (Mentor, NRO L-15, USA 237)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "National Reconnaissance Office (NRO)",
+    "Users": "Military",
+    "Purpose": "Earth Observation",
+    "ApogeeKM": "35,805",
+    "LaunchMassKG": "5,000",
+    "DateOfLaunch": "6/29/2012",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "Advanced Orion 7 (Mentor, NRO L-37, USA 268)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "National Reconnaissance Office (NRO)",
+    "Users": "Military",
+    "Purpose": "Earth Observation",
+    "ApogeeKM": "35,903",
+    "LaunchMassKG": "5,000",
+    "DateOfLaunch": "6/11/2016",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "AEHF-2 (Advanced Extremely High Frequency satellite-2, USA 235)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "US Air Force",
+    "Users": "Military",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,801",
+    "LaunchMassKG": "6,169",
+    "DateOfLaunch": "5/3/2012",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "AEHF-3 (Advanced Extremely High Frequency satellite-3, USA 246)",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "US Air Force",
+    "Users": "Military",
+    "Purpose": "Communications",
+    "ApogeeKM": "35,803",
+    "LaunchMassKG": "6,169",
+    "DateOfLaunch": "9/18/2013",
+    "LaunchSite": "Cape Canaveral"
+  },
+  {
+    "Name": "Aeneas",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "Department of Homeland Security",
+    "Users": "Government",
+    "Purpose": "Technology Development",
+    "ApogeeKM": 790,
+    "LaunchMassKG": 3,
+    "DateOfLaunch": "9/13/2012",
+    "LaunchSite": "Vandenberg AFB"
+  },
+  {
+    "Name": "Aerocube 4.5A",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "Aerospace Corporation",
+    "Users": "Commercial",
+    "Purpose": "Technology Development",
+    "ApogeeKM": 791,
+    "LaunchMassKG": 5,
+    "DateOfLaunch": "9/13/2012",
+    "LaunchSite": "Vandenberg AFB"
+  },
+  {
+    "Name": "Aerocube 4.5B",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "Aerospace Corporation",
+    "Users": "Commercial",
+    "Purpose": "Technology Development",
+    "ApogeeKM": 792,
+    "LaunchMassKG": 5,
+    "DateOfLaunch": "9/13/2012",
+    "LaunchSite": "Vandenberg AFB"
+  },
+  {
+    "Name": "Aerocube 5A",
+    "CountryOperatorOwner": "USA",
+    "OperatorOwner": "Aerospace Corporation",
+    "Users": "Commercial",
+    "Purpose": "Technology Development",
+    "ApogeeKM": 886,
+    "LaunchMassKG": 5,
+    "DateOfLaunch": "12/6/2013",
+    "LaunchSite": "Vandenberg AFB"
+  }
+  ]
+}

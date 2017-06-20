@@ -3,32 +3,40 @@
   <h1>Satellites are Aweseome!</h1>
 
   <button class="btn btn-success" (click)="funkButtonClicked()" >Funk</button>
+  <button class="btn btn-info" (click)="stopButtonClicked()" >Stop</button>
 
   <div id="test-div"></div>
 
+  <svg>
+    <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
+    <svg:circle class="start"></svg:circle>
+  </svg>
 
   <div *ngIf="readyToDisplay === true" id="mainResults">
-    <!-- <div *ngFor="let key in satToDisplay"> -->
-      <h4> {{satToDisplay['Name']}} </h4>
-      <!-- <h4> {{satToDisplay?.Name}} </h4> -->
-    <!-- </div> -->
+    <div *ngFor="let sat of satellites | async | country:desiredCountry">
+      <div class="">
+        <p> {{sat.Name}} - {{sat.CountryOperatorOwner}}</p>
+        <br>
+      </div>
+    </div>
   </div>
 
-
-
-<svg>
-  <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
-  <svg:circle class="start"></svg:circle>
-</svg>
-
-
-
-  <!-- {{(satToDisplay | async)?.Name}} -->
-
-  <!-- <div *ngIf="display === true" id="mainResults">
-    <div *ngFor="let stuff of getOneSat('0') | async">
-      <p>{{stuff}}</p>
-    </div>
-  </div> -->
-
 </div>
+
+<!-- public Name: string,
+public CountryOperatorOwner: string,
+public OperatorOwner: string,
+public Users: string,
+public Purpose: string,
+public ApogeeKM: number,
+public LaunchMassKG: number,
+public DateOfLaunch: string,
+public LaunchSite: string -->
+
+<!-- {{(satToDisplay | async)?.Name}} -->
+
+<!-- <div *ngIf="display === true" id="mainResults">
+<div *ngFor="let stuff of getOneSat('0') | async">
+<p>{{stuff}}</p>
+</div>
+</div> -->
