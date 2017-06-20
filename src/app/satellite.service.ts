@@ -9,33 +9,19 @@ export class SatelliteService {
   satellites: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.satellites = database.list('satellite');
+    this.satellites = database.list('satellites');
   }
 
   getSatellites() {
     return this.satellites;
   }
 
-  getSatelliteById(satelliteId: string){
-    return this.database.object('/satellites/' + satelliteId);
+  getSatelliteById(someid: string){
+    return this.database.object('/satellites/' + someid);
   }
-
-  // addSatellite(newSatellite: Satellite) {
-  //   this.satellites.push(newSatellite);
-  // }
-
-  // updateSatellite(localUpdatedSatellite){
-  //   let satelliteEntryInFirebase = this.getSatelliteById(localUpdatedSatellite.$key);
-  //   satelliteEntryInFirebase.update({name: localUpdatedSatellite.name,
-  //                             role: localUpdatedSatellite.role,
-  //                             tech: localUpdatedSatellite.tech,
-  //                             years: localUpdatedSatellite.years,
-  //                             bio: localUpdatedSatellite.bio});
-  // }
-
-  // deleteSatellite(localSatelliteToDelete){
-  //   let satelliteEntryInFirebase = this.getSatelliteById(localSatelliteToDelete.$key);
-  //   satelliteEntryInFirebase.remove();
+  
+  // getSatelliteById(satelliteId: string){
+  //   return this.database.object('/satellites/' + satelliteId);
   // }
 
 }

@@ -2,8 +2,25 @@
 <div class="container">
   <h1>Satellites are Aweseome!</h1>
 
-  <button class="btn btn-success" (click)="buttonClicked()" >Funk</button>
+  <button class="btn btn-success" (click)="funkButtonClicked()" >Funk</button>
 
   <div id="test-div"></div>
+
+
+  <div *ngIf="readyToDisplay === true" id="mainResults">
+    <!-- <div *ngFor="let key in satToDisplay"> -->
+      <h4> {{satToDisplay['Name']}} </h4>
+      <!-- <h4> {{satToDisplay?.Name}} </h4> -->
+    <!-- </div> -->
+  </div>
+
+
+  <!-- {{(satToDisplay | async)?.Name}} -->
+
+  <!-- <div *ngIf="display === true" id="mainResults">
+    <div *ngFor="let stuff of getOneSat('0') | async">
+      <p>{{stuff}}</p>
+    </div>
+  </div> -->
 
 </div>
