@@ -28,15 +28,16 @@ function mainFunk() {
       .attr("class", "satelite");
 
   var allSatelites = svg.selectAll(".satelite")
-  allSatelites.attr("cx", function(d) { return d.cx; });
-  allSatelites.attr("cy", function(d) { return d.cy; });
-  allSatelites.attr("r", function(d) { return d.rad; });
+  // allSatelites.attr("cx", function(d) { return d.cx; });
+  // allSatelites.attr("cy", function(d) { return d.cy; });
+  // allSatelites.attr("r", function(d) { return d.rad; });
 
-  // allSatelites.attrs({
-  //   cx: function (d) { return d.cx; },
-  //   cy: function (d) { return d.cy; },
-  //   r:  function (d) { return d.rad; }
-  // });
+  allSatelites.attrs({
+    cx: function (d) { return d.cx; },
+    cy: function (d) { return d.cy; },
+    r:  function (d) { return d.rad; }
+  });
+  //This works with the d3 extension d3-selection-multi which has been added to the htmml file's head.
 
 
   // selection.styles(function(d) { return {fill: "red", stroke: d.stroke}; });
@@ -45,18 +46,36 @@ function mainFunk() {
 
   function updateAnim() {
 
+    //This function will add a new satelite into the orbit of the planet:
     if (newObject != null) {
-
       var satelite = svg.selectAll(".start")
           .data(satData, function(d, i) { return (i); } )
           .enter().append("circle")
           .attr("class", "satelite");
-
       var allSatelites = svg.selectAll(".satelite")
-      allSatelites.attr("cx", function(d) { return d.cx; });
-      allSatelites.attr("cy", function(d) { return d.cy; });
-      allSatelites.attr("r", function(d) { return d.rad; });
+      // allSatelites.attr("cx", function(d) { return d.cx; });
+      // allSatelites.attr("cy", function(d) { return d.cy; });
+      // allSatelites.attr("r", function(d) { return d.rad; });
+      allSatelites.attrs({
+        cx: function (d) { return d.cx; },
+        cy: function (d) { return d.cy; },
+        r:  function (d) { return d.rad; }
+      });
+      allSatelites.on("mouseover", function(d) {
+        d3.select(this)
+        .style("stroke", "black").style("stroke-width", 5);
 
+
+
+        running = false;
+        console.log(d);
+        div.transition()
+            .duration(200)
+            .style("opacity", .9);
+        div	.html(d.name + "<br/>"  + d.owner)
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+      })
       newObject = null;
     }
 
@@ -122,12 +141,13 @@ $(document).ready(function(){
 
   $('#submit-form').submit(function(event){
     event.preventDefault();
+    var nameInput = $("input#satName").val();
+    var ownerInput = $("input#satOwner").val();
     var radInput = parseFloat($("input#rad").val());
     var speedInput = parseFloat($("input#speed").val());
-    var phiInput = parseFloat($("input#phi").val());
     var cxInput = parseFloat($("input#cx").val());
     var cyInput = parseFloat($("input#cy").val());
-    newObject = { rad:  radInput, speed: speedInput, phi0: phiInput, cx: cxInput, cy: cyInput, move: true };
+    newObject = { name: nameInput, owner: ownerInput, rad:  radInput, speed: speedInput, cx: cxInput, cy: cyInput, move: true };
     satData.push(newObject);
     // mainFunk();
   });
