@@ -37,10 +37,22 @@ function mainFunk() {
     cy: function (d) { return d.cy; },
     r:  function (d) { return d.rad; }
   });
+
+  allSatelites.style("fill", function(d) {
+    if(d.owner === 'USA') {
+      return "steelblue";
+    } else if (d.owner === 'Russia') {
+      return "red";
+    } else if (d.owner === 'UN') {
+      return "white";
+    }
+  });
+
+
   //This works with the d3 extension d3-selection-multi which has been added to the htmml file's head.
 
 
-  // selection.styles(function(d) { return {fill: "red", stroke: d.stroke}; });
+
 
   var masterRad = 0;
 
@@ -61,21 +73,7 @@ function mainFunk() {
         cy: function (d) { return d.cy; },
         r:  function (d) { return d.rad; }
       });
-      allSatelites.on("mouseover", function(d) {
-        d3.select(this)
-        .style("stroke", "black").style("stroke-width", 5);
 
-
-
-        running = false;
-        console.log(d);
-        div.transition()
-            .duration(200)
-            .style("opacity", .9);
-        div	.html(d.name + "<br/>"  + d.owner)
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
-      })
       newObject = null;
     }
 
@@ -101,9 +99,9 @@ function mainFunk() {
 
   allSatelites.on("mouseover", function(d) {
     d3.select(this)
-    .style("stroke", "black").style("stroke-width", 5);
-
-
+    .style("stroke", "gold")
+    .style("stroke-width", 3)
+    // .style("fill", "white");
 
     running = false;
     console.log(d);
@@ -119,7 +117,10 @@ function mainFunk() {
 
 
   function hideData(){
-    d3.select(this).style("stroke", "black").style("stroke-width", 1);
+    d3.select(this)
+    .style("stroke", "black")
+    .style("stroke-width", 1)
+    // .style("fill", "steelblue");
     running = true;
     // for (var i = 0; i<satData.length; i++)	{
     // 	console.log(satData[i]['move']=false);
