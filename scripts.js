@@ -7,7 +7,8 @@ var satData = [
   { name: 'Explorer 1', owner: 'USA', rad: 5.3, speed: 6, cx: 294, cy: 0, move: true },
   { name: 'Chandrayaan 1', owner: 'India', rad: 3.8, speed: 15, cx: 400, cy: 0, move: true },
   { name: 'NOAA', owner: 'USA', rad: 4.2, speed: 22, cx: 125, cy: 0, move: true },
-  { name: 'Uhuru', owner: 'USA', rad: 20, speed: 40, cx: 125, cy: 0, move: false }
+  { name: 'Uhuru', owner: 'USA', rad: 20, speed: 40, cx: 125, cy: 0, move: false },
+  { name: 'Test Satelite', owner: 'Ken', rad: 35, speed: 40, cx: 450, cy: 0, move: true }
 ];
 
 var newObject = null;
@@ -79,9 +80,9 @@ function mainFunk() {
 
     svg.selectAll(".satelite").attr("transform", function(d) {
       if (d.move === true) {
-        return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
+        return "translate(750,750), rotate(" + (masterRad * d.speed/100) + ")";
       } else {
-        return "translate(500,500)";
+        return "translate(750,750)";
       }
 
     });
