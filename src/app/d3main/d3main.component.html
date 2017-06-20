@@ -3,7 +3,7 @@
   <h1>Satellites are Aweseome!</h1>
 
   <button class="btn btn-success" (click)="funkButtonClicked()">Start</button>
-  <button class="btn btn-info" (click)="stopButtonClicked()">Stop</button>
+  <button class="btn btn-info" (click)="anotherOneClicked()">Another One</button>
 
   <div id="test-div"></div>
 
@@ -15,16 +15,17 @@
   <br>
   <br>
 
+<div id="lowEarthOrbit">
   <svg>
-    <svg:circle class="earth" cx="500" cy="100" r="35"></svg:circle>
+    <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
     <svg:circle class="start"></svg:circle>
   </svg>
+</div>
 
   <div *ngIf="readyToDisplay === true" id="mainResults">
     <div *ngFor="let sat of satellites | async | country:desiredFilter">
       <div class="">
         <p> {{sat.Name}} - {{sat.CountryOperatorOwner}}</p>
-        <br>
       </div>
     </div>
   </div>
@@ -45,9 +46,3 @@ public DateOfLaunch: string,
 public LaunchSite: string -->
 
 <!-- {{(satToDisplay | async)?.Name}} -->
-
-<!-- <div *ngIf="display === true" id="mainResults">
-<div *ngFor="let stuff of getOneSat('0') | async">
-<p>{{stuff}}</p>
-</div>
-</div> -->
