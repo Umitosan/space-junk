@@ -51,7 +51,7 @@ export class D3mainComponent implements OnInit {
     let myArr: any[] = [];
     for (let i = 0; i < sats.length ; i++) {
       let randSpeed: number = this.getRandomNum(3,20);
-      let randRad: number = this.getRandomNum(2,20);
+      let randRad: number = this.getRandomNum(2,5);
       let randCx: number = this.getRandomNum(100,500);
       let newSat = {  name: sats[i].Name , owner: sats[i].OperatorOwner,
                       rad: randRad, speed: randSpeed,  cx: randCx, cy: 0, move: true }
@@ -138,6 +138,7 @@ export class D3mainComponent implements OnInit {
         }
 
       });
+      console.log('masterRad: ', masterRad);
       if (masterRad === 10000) { masterRad = 0; }
       if (running === true) {  masterRad += 1; }
     }
