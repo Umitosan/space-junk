@@ -25,7 +25,7 @@ export class D3mainComponent implements OnInit {
   satData: any[] = [];
   running = true;
 
-  lightsOn: boolean = true;
+  themeStatus: string = "lightsOff";
 
   constructor(element: ElementRef,
               d3Service: D3Service,
@@ -109,15 +109,15 @@ export class D3mainComponent implements OnInit {
   }
 
   turnLightsOff() {
-    document.getElementById("thisSvg").classList.remove('svg1');
-    document.getElementById("thisSvg").classList.add('svg2');
-    this.lightsOn = false;
+    // document.getElementById("thisSvg").classList.remove('svg1');
+    // document.getElementById("thisSvg").classList.add('svg2');
+    this.themeStatus = "lightsOff";
   }
 
   turnLightsOn() {
-    document.getElementById("thisSvg").classList.remove('svg2');
-    document.getElementById("thisSvg").classList.add('svg1');
-    this.lightsOn = true;
+    // document.getElementById("thisSvg").classList.remove('svg2');
+    // document.getElementById("thisSvg").classList.add('svg1');
+    this.themeStatus = "lightsOn";
   }
 
   satInit(myd3) {
