@@ -48,11 +48,8 @@ div.tooltip {
     max-height: 100px;
     padding: 10px;
     font: 12px sans-serif;
-    background: lightsteelblue;
+    background: rgba(241, 248, 255, 0.7);
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
 }
-
-
-/*nicky styles*/
