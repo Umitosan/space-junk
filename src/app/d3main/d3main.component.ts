@@ -226,7 +226,7 @@ export class D3mainComponent implements OnInit {
     allSatelites.on("mouseover", function(d) {
       d3.select(this)
       .style("stroke", "black").style("stroke-width", 5);
-      this.running = false;
+      running = false;
       console.log(d);
       div.transition()
           .duration(200)
@@ -240,7 +240,7 @@ export class D3mainComponent implements OnInit {
 
     function hideData(){
       d3.select(this).style("stroke", "black").style("stroke-width", 1);
-      this.running = true;
+      running = true;
       div.transition()
           .duration(500)
           .style("opacity", 0);
@@ -259,7 +259,7 @@ export class D3mainComponent implements OnInit {
       .classed("satelite", false);
     var satelites = d3.selectAll("circle")
 
-    satelites.transition().transition()
+    satelites.transition()
         .delay(0)
         .duration(1000)
         .attr("cx", function(d) {
