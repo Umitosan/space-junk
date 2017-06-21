@@ -1,38 +1,33 @@
 
   <h1>Sattellites, the junk in our skies</h1>
 
-  <!-- <div id="earthImg"></div> -->
-
   <p>Filter Satellites </p>
   <select (change)="onChange($event.target.value)">
     <option value="none" selected="selected">None</option>
+    <option value="USA">USA</option>
     <option value="Multinational">Multinational</option>
+    <option value="China">China</option>
+    <option value="Japan">Japan</option>
+    <option value="Russia">Russia</option>
+    <option value="Canada">Canada</option>
+    <option value="Germany">Germany</option>
+    <option value="India">India</option>
   </select>
   <br>
   <br>
 
-  <button class="btn btn-success" (click)="funkButtonClicked()">Start</button>
-  <button class="btn btn-info" (click)="scatterPlot() ">Another One</button>
-
+  <button class="btn btn-success" (click)="startButtonClicked()">Start</button>
+  <button class="btn btn-info" (click)="anotherOneClicked()">Another One</button>
   <button class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
   <button class="btn btn-warning" (click)="turnLightsOn()">Lights On</button>
 
   <div id="lowEarthOrbit">
     <div id="earthImg"></div>
-      <svg class="svg1" id="thisSvg">
-        <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
-        <svg:circle class="start"></svg:circle>
+      <svg>
+        <!-- <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
+        <svg:circle class="start"></svg:circle> -->
       </svg>
   </div>
-
-  <div *ngIf="readyToDisplay === true" id="mainResults">
-    <div *ngFor="let sat of satellites | country:desiredFilter">
-      <div class="">
-        <p> {{sat.Name}} - {{sat.CountryOperatorOwner}}</p>
-      </div>
-    </div>
-  </div>
-
 
 <app-d3output>Loading...</app-d3output>
 
@@ -46,5 +41,3 @@ public ApogeeKM: number,
 public LaunchMassKG: number,
 public DateOfLaunch: string,
 public LaunchSite: string -->
-
-<!-- {{(satToDisplay | async)?.Name}} -->
