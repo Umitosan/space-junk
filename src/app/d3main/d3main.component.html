@@ -3,6 +3,7 @@
   <h2><em>Satellites, the junk in our skies</em></h2>
 </div>
 
+<div class="filter row">
   <p>Filter Satellites </p>
   <select (change)="onChange($event.target.value)">
     <option value="none" selected="selected">None</option>
@@ -15,13 +16,12 @@
     <option value="Germany">Germany</option>
     <option value="India">India</option>
   </select>
-  <br>
-  <br>
 
   <button class="btn btn-success" (click)="startButtonClicked()">Start</button>
   <button class="btn btn-info" (click)="anotherOneClicked()">Another One</button>
   <button class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
   <button class="btn btn-warning" (click)="turnLightsOn()">Lights On</button>
+</div>
 
   <div id="lowEarthOrbit">
     <div id="earthImg"></div>
