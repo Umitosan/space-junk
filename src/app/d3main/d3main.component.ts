@@ -44,6 +44,9 @@ export class D3mainComponent implements OnInit {
               this.satelliteService.getSatellites().subscribe(data => {
                 this.satellites = data;
               });
+
+              var num1: number = 5;
+
   }
 
   createSatData(sats) {
@@ -53,16 +56,17 @@ export class D3mainComponent implements OnInit {
       let randRad: number = this.getRandomNum(2,5);
 
       let powerApogee: number = (Math.pow(sats[i].ApogeeKM, 1/2) + 50);
-      // let randCx: number = this.getRandomNum(1,500) * ;
-      // let randCy: number = this.getRandomNum(1,500) ;
+      let randCx: number = this.getRandomNum(1,powerApogee);
+      let calcCY: number = Math.pow(( (powerApogee**2) - (randCx**2) ) ,1/2);
+
 
 
       let newSat = {  name: sats[i].Name , owner: sats[i].CountryOperatorOwner,
-                      rad: randRad, speed: randSpeed,  cx: powerApogee, cy: 0, move: true }
+                      rad: randRad, speed: randSpeed,  cx: powerApogee, cy: calcCY, move: true }
       myArr.push(newSat);
     }
     this.satData = myArr;
-    console.log("myArr", myArr);
+
     // public Name: string,
     // public CountryOperatorOwner: string,
     // public OperatorOwner: string,
@@ -72,6 +76,7 @@ export class D3mainComponent implements OnInit {
     // public LaunchMassKG: number,
     // public DateOfLaunch: string,
     // public LaunchSite: string
+
   } // <-- end createSatData
 
   getRandomNum(min, max) {
@@ -148,20 +153,20 @@ export class D3mainComponent implements OnInit {
 
     function updateAnim() {
 
-      if (newObject != null) {
-
-        let satelite = svg.selectAll(".start")
-            .data(satData, function(d, i) { return (i); } )
-            .enter().append("circle")
-            .attr("class", "satelite");
-
-        let allSatelites = svg.selectAll(".satelite")
-        allSatelites.attr("cx", function(d) { return d.cx; });
-        allSatelites.attr("cy", function(d) { return d.cy; });
-        allSatelites.attr("r", function(d) { return d.rad; });
-
-        newObject = null;
-      }
+      // if (newObject != null) {
+      //
+      //   let satelite = svg.selectAll(".start")
+      //       .data(satData, function(d, i) { return (i); } )
+      //       .enter().append("circle")
+      //       .attr("class", "satelite");
+      //
+      //   let allSatelites = svg.selectAll(".satelite")
+      //   allSatelites.attr("cx", function(d) { return d.cx; });
+      //   allSatelites.attr("cy", function(d) { return d.cy; });
+      //   allSatelites.attr("r", function(d) { return d.rad; });
+      //
+      //   newObject = null;
+      // }
 
       svg.selectAll(".satelite").attr("transform", function(d) {
         if (d.move === true) {
