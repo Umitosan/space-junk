@@ -43,7 +43,6 @@ export class D3mainComponent implements OnInit {
               }
               this.satelliteService.getSatellites().subscribe(data => {
                 this.satellites = data;
-                // this.createSatData(data);
               });
   }
 
@@ -52,9 +51,14 @@ export class D3mainComponent implements OnInit {
     for (let i = 0; i < sats.length ; i++) {
       let randSpeed: number = this.getRandomNum(3,20);
       let randRad: number = this.getRandomNum(2,5);
-      let randCx: number = this.getRandomNum(100,500);
-      let newSat = {  name: sats[i].Name , owner: sats[i].OperatorOwner,
-                      rad: randRad, speed: randSpeed,  cx: randCx, cy: 0, move: true }
+
+      let powerApogee: number = (Math.pow(sats[i].ApogeeKM, 1/2) + 50);
+      // let randCx: number = this.getRandomNum(1,500) * ;
+      // let randCy: number = this.getRandomNum(1,500) ;
+
+
+      let newSat = {  name: sats[i].Name , owner: sats[i].CountryOperatorOwner,
+                      rad: randRad, speed: randSpeed,  cx: powerApogee, cy: 0, move: true }
       myArr.push(newSat);
     }
     this.satData = myArr;
@@ -107,9 +111,38 @@ export class D3mainComponent implements OnInit {
         .attr("class", "satelite");
 
     let allSatelites = svg.selectAll(".satelite")
-    allSatelites.attr("cx", function(d) { return d.cx; });
-    allSatelites.attr("cy", function(d) { return d.cy; });
-    allSatelites.attr("r", function(d) { return d.rad; });
+
+    allSatelites.style("fill", function(d) {
+      if(d.owner === 'USA') {
+        return "steelblue";
+      } else if (d.owner === 'Russia') {
+        return "darkred";
+      } else if (d.owner === 'Multinational') {
+        return "white";
+      } else if (d.owner === 'China') {
+        return "red";
+      }
+    });
+
+    allSatelites.attrs({
+      cx: 0,
+      cy: 0,
+      r:  function (d) { return d.rad; }
+    });
+
+    allSatelites.attr("transform", function(d) {
+      d3.select(this)
+      .transition()
+        .delay(0)
+        .duration(1000)
+        .attr("cx", d.cx)
+        .attr("cy", d.cy);
+    });
+
+
+    // allSatelites.attr("cx", function(d) { return d.cx; });
+    // allSatelites.attr("cy", function(d) { return d.cy; });
+    // allSatelites.attr("r", function(d) { return d.rad; });
 
     let masterRad = 0;
 
@@ -138,7 +171,7 @@ export class D3mainComponent implements OnInit {
         }
 
       });
-      console.log('masterRad: ', masterRad);
+      // console.log('masterRad: ', masterRad);
       if (masterRad === 10000) { masterRad = 0; }
       if (running === true) {  masterRad += 1; }
     }
