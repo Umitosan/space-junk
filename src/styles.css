@@ -1,6 +1,12 @@
 svg {
-  width: 1000px;
-  height: 1000px;
+  /*background-image: url('./../earth1_scaled.png');*/
+  background-color: black;
+  background-image: url('./../earth_anim.gif');
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: 450px 450px;
+  width: 2000px;
+  height: 1200px;
 }
 
 .orbit {
@@ -14,8 +20,8 @@ svg {
 }
 
 .earth {
-  stroke : #000000;
-  fill : #ffcc00;
+  stroke : none;
+  fill : none;
 }
 
 #myBtn {

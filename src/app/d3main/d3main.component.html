@@ -1,7 +1,7 @@
 
-<div class="container">
   <h1>Sattellites, the junk in our skies</h1>
 
+  <!-- <div id="earthImg"></div> -->
 
   <p>Filter Satellites </p>
   <select (change)="onChange($event.target.value)">
@@ -15,10 +15,11 @@
   <button class="btn btn-info" (click)="anotherOneClicked()">Another One</button>
 
   <div id="lowEarthOrbit">
-    <svg>
-      <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
-      <svg:circle class="start"></svg:circle>
-    </svg>
+    <div id="earthImg"></div>
+      <svg>
+        <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
+        <svg:circle class="start"></svg:circle>
+      </svg>
   </div>
 
   <div *ngIf="readyToDisplay === true" id="mainResults">
@@ -29,7 +30,6 @@
     </div>
   </div>
 
-</div>
 
 <app-d3output>Loading...</app-d3output>
 

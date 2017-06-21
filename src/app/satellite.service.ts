@@ -16,9 +16,9 @@ export class SatelliteService {
     return this.satellites;
   }
 
-  getSatelliteById(someid: string){
-    return this.database.object('/satellites/' + someid);
-  }
+  // getSatelliteById(someid: string){
+  //   return this.database.object('/satellites/' + someid);
+  // }
 
 
 }
