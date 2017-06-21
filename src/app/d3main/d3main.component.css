@@ -22,3 +22,24 @@
 .footer {
   margin-bottom: 0 !important;
 }
+
+
+/*.lightsOn {
+  background-color: white;
+  background-image: url('./../Sphererotating.gif');
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: 450px 450px;
+  width: 2000px;
+  height: 1200px;
+}
+
+.lightsOff {
+  background-color: black;
+  background-image: url('./../earth_anim.gif');
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: 450px 450px;
+  width: 2000px;
+  height: 1200px;
+}*/
