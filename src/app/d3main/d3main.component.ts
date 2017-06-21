@@ -4,12 +4,13 @@ import { D3Service, D3, Selection } from 'd3-ng2-service'; // <-- import the D3 
 import { Satellite } from '../satellite.model';
 import { SatelliteService } from '../satellite.service';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { CountryPipe } from '../country.pipe';
 
 @Component({
   selector: 'app-d3main',
   templateUrl: './d3main.component.html',
   styleUrls: ['./d3main.component.css'],
-  providers: [SatelliteService]
+  providers: [SatelliteService, CountryPipe]
 })
 
 export class D3mainComponent implements OnInit {
@@ -19,19 +20,23 @@ export class D3mainComponent implements OnInit {
   readyToDisplay: boolean = false;
   desiredFilter: string = "none";
   masterRad: number = 0;
+  countryFilter: any;
 
   satData: any[] = [];
-  newObject = null;
+  // newObject = null;
   running = true;
 
+  lightsOn: boolean = true;
 
   constructor(element: ElementRef,
               d3Service: D3Service,
               private router: Router,
               private database: AngularFireDatabase,
-              private satelliteService: SatelliteService) {
+              private satelliteService: SatelliteService,
+              countryPipe: CountryPipe) {
         this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
         this.parentNativeElement = element.nativeElement;
+        this.countryFilter = countryPipe;
   }
 
   ngOnInit() {
@@ -46,27 +51,27 @@ export class D3mainComponent implements OnInit {
               });
 
               var num1: number = 5;
+  } // END ngOnInit()
 
-  }
-
-  createSatData(sats) {
+  createSatData(satArr) {
     let myArr: any[] = [];
-    for (let i = 0; i < sats.length ; i++) {
+    for (let i = 0; i < satArr.length ; i++) {
       let randSpeed: number = this.getRandomNum(3,20);
-      let randRad: number = this.getRandomNum(2,5);
 
-      let powerApogee: number = (Math.pow(sats[i].ApogeeKM, 1/2) + 50);
+      let calcRad: number = ((satArr[i].LaunchMassKG**(1/3))/3)+1.7;
+      let powerApogee: number = (Math.pow(satArr[i].ApogeeKM, 1/2) + 50);
       let randCx: number = this.getRandomNum(1,powerApogee);
       let calcCY: number = Math.pow(( (powerApogee**2) - (randCx**2) ) ,1/2);
 
+      let dateOfLaunch: string = satArr[i].DateOfLaunch;
 
+      let newSat = {  name: satArr[i].Name , owner: satArr[i].CountryOperatorOwner,
+                      rad: calcRad, speed: randSpeed,  cx: powerApogee, cy: calcCY, move: true, date: dateOfLaunch }
 
-      let newSat = {  name: sats[i].Name , owner: sats[i].CountryOperatorOwner,
-                      rad: randRad, speed: randSpeed,  cx: powerApogee, cy: calcCY, move: true }
       myArr.push(newSat);
     }
     this.satData = myArr;
-
+    // MODEL
     // public Name: string,
     // public CountryOperatorOwner: string,
     // public OperatorOwner: string,
@@ -76,16 +81,18 @@ export class D3mainComponent implements OnInit {
     // public LaunchMassKG: number,
     // public DateOfLaunch: string,
     // public LaunchSite: string
-
-  } // <-- end createSatData
+  } // END createSatData
 
   getRandomNum(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-  funkButtonClicked() {
-    this.createSatData(this.satellites)
-    this.mainFunk(this.d3, this.satData, this.newObject, this.running);
+  startButtonClicked() {
+    if (this.readyToDisplay === true) {
+      this.createSatData(this.satData)
+      this.satInit(this.d3);
+      this.readyToDisplay = false;
+    }
   }
 
   anotherOneClicked() {
@@ -93,15 +100,37 @@ export class D3mainComponent implements OnInit {
   }
 
   onChange(dropdownOption) {
+    let allSats: any[] = this.satellites;
+    this.satData = [];
     this.desiredFilter = dropdownOption;
     this.readyToDisplay = true;
-    console.log("dropdownOption changed to: ", this.desiredFilter);
+    let someArr: any[] = this.countryFilter.transform(allSats, this.desiredFilter);
+    this.satData = someArr;
+    console.log(this.satData.length);
   }
 
-  mainFunk(d3, sd, newo, run) {
-    let satData = sd;
-    let newObject = newo;
-    let running = run;
+  turnLightsOff() {
+    document.getElementById("thisSvg").classList.remove('svg1');
+    document.getElementById("thisSvg").classList.add('svg2');
+    this.lightsOn = false;
+  }
+
+  turnLightsOn() {
+    document.getElementById("thisSvg").classList.remove('svg2');
+    document.getElementById("thisSvg").classList.add('svg1');
+    this.lightsOn = true;
+  }
+
+  satInit(myd3) {
+
+    let d3 = myd3;
+    // clear all cirlces before creating new ones
+    d3.selectAll("circle").remove();
+
+    let satData = this.satData;
+    console.log("init data length", satData.length);
+    // let newObject = this.newObject;
+    let running = this.running;
 
     let svg = d3.select("svg");
 
@@ -110,13 +139,14 @@ export class D3mainComponent implements OnInit {
       .style("opacity", 0);
 
     //for each item in satData create a new satelite circle element
-    let satelite = svg.selectAll(".start")
+    let satelite = svg.selectAll()
         .data(satData, function(d, i) { return (i); } )
         .enter().append("circle")
         .attr("class", "satelite");
 
     let allSatelites = svg.selectAll(".satelite")
 
+    // color by country
     allSatelites.style("fill", function(d) {
       if(d.owner === 'USA') {
         return "steelblue";
@@ -125,7 +155,17 @@ export class D3mainComponent implements OnInit {
       } else if (d.owner === 'Multinational') {
         return "white";
       } else if (d.owner === 'China') {
+        return "gold";
+      } else if (d.owner === 'United Kingdom') {
+        return "blue";
+      } else if (d.owner === 'Japan') {
         return "red";
+      } else if (d.owner === 'ESA') {
+        return "lightblue";
+      } else if (d.owner === 'Germany') {
+        return "green";
+      } else if (d.owner === 'India') {
+        return "yellow";
       }
     });
 
@@ -144,7 +184,6 @@ export class D3mainComponent implements OnInit {
         .attr("cy", d.cy);
     });
 
-
     // allSatelites.attr("cx", function(d) { return d.cx; });
     // allSatelites.attr("cy", function(d) { return d.cy; });
     // allSatelites.attr("r", function(d) { return d.rad; });
@@ -152,21 +191,6 @@ export class D3mainComponent implements OnInit {
     let masterRad = 0;
 
     function updateAnim() {
-
-      // if (newObject != null) {
-      //
-      //   let satelite = svg.selectAll(".start")
-      //       .data(satData, function(d, i) { return (i); } )
-      //       .enter().append("circle")
-      //       .attr("class", "satelite");
-      //
-      //   let allSatelites = svg.selectAll(".satelite")
-      //   allSatelites.attr("cx", function(d) { return d.cx; });
-      //   allSatelites.attr("cy", function(d) { return d.cy; });
-      //   allSatelites.attr("r", function(d) { return d.rad; });
-      //
-      //   newObject = null;
-      // }
 
       svg.selectAll(".satelite").attr("transform", function(d) {
         if (d.move === true) {
@@ -176,13 +200,12 @@ export class D3mainComponent implements OnInit {
         }
 
       });
-      // console.log('masterRad: ', masterRad);
       if (masterRad === 10000) { masterRad = 0; }
       if (running === true) {  masterRad += 1; }
-    }
 
-    d3.timer(updateAnim);
+    } // END updateAnim
 
+    // show data bubble
     allSatelites.on("mouseover", function(d) {
       d3.select(this)
       .style("stroke", "black").style("stroke-width", 5);
@@ -198,56 +221,29 @@ export class D3mainComponent implements OnInit {
 
     allSatelites.on("mouseout", hideData);
 
-
     function hideData(){
       d3.select(this).style("stroke", "black").style("stroke-width", 1);
       running = true;
-      // for (let i = 0; i<satData.length; i++)	{
-      // 	console.log(satData[i]['move']=false);
-      // };
       div.transition()
           .duration(500)
           .style("opacity", 0);
     };
+    d3.timer(updateAnim);
 
-  }
+    function scatterPlot() {
+      allSatelites.attr("transform", function(d) {
+        running = false;
+        d3.select(this)
+        .transition()
+          .delay(0)
+          .duration(1000)
+          .attr("cx", d.cx)
+          .attr("cy", d.cy);
+      });
+    };
 
-  // mainFunk(d3) {
-  //
-  //   let svg = d3.select("svg");
-  //
-  //   let satData = [
-  //     { rad:  5, speed: 0.9, phi0: 100, cx: 50, cy: 0 },
-  //     { rad:  10, speed: 0.6, phi0: 100, cx: 70, cy: 0 },
-  //     { rad:  20, speed: 0.3, phi0: 100, cx: 100, cy: 0 }
-  //   ];
-  //
-  //   //for each item in satData create a new satelite circle element
-  //   let satelite = svg.selectAll(".start")
-  //       .data(satData, function(d, i) { return (i); } )
-  //       .attr("class", "satelite");
-  //
-  //   satelite.enter().append("circle")
-  //       .attr("class", "satelite");
-  //
-  //   let allSatelites = svg.selectAll(".satelite")
-  //   allSatelites.attr("cx", function(d) { return d.cx; });
-  //   allSatelites.attr("cy", function(d) { return d.cy; });
-  //   allSatelites.attr("r", function(d) { return d.rad; });
-  //
-  //   let masterRad = 0;
-  //
-  //   function updateAnim() {
-  //     svg.selectAll(".satelite").attr("transform", function(d) {
-  //       return "translate(500,100), rotate(" + d.phi0 + masterRad * d.speed + ")";
-  //     });
-  //     if (masterRad === 3600000) {
-  //       masterRad = 0;
-  //     }
-  //     masterRad += 1;
-  //     // console.log(masterRad);
-  //   }
-  //   d3.timer(updateAnim);
-  // }
+  } // END satInit
 
-}
+
+
+} // END D3mainComponent
