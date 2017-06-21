@@ -109,17 +109,6 @@ export class D3mainComponent implements OnInit {
     console.log(this.satData.length);
   }
 
-  satInit(myd3) {
-
-    let d3 = myd3;
-    // clear all cirlces before creating new ones
-    d3.selectAll("circle").remove();
-
-    let satData = this.satData;
-    console.log("init data length", satData.length);
-    // let newObject = this.newObject;
-    let running = this.running;
-
   turnLightsOff() {
     document.getElementById("thisSvg").classList.remove('svg1');
     document.getElementById("thisSvg").classList.add('svg2');
@@ -132,6 +121,16 @@ export class D3mainComponent implements OnInit {
     this.lightsOn = true;
   }
 
+  satInit(myd3) {
+
+    let d3 = myd3;
+    // clear all cirlces before creating new ones
+    d3.selectAll("circle").remove();
+
+    let satData = this.satData;
+    console.log("init data length", satData.length);
+    // let newObject = this.newObject;
+    let running = this.running;
 
     let svg = d3.select("svg");
 
@@ -163,6 +162,10 @@ export class D3mainComponent implements OnInit {
         return "red";
       } else if (d.owner === 'ESA') {
         return "lightblue";
+      } else if (d.owner === 'Germany') {
+        return "green";
+      } else if (d.owner === 'India') {
+        return "yellow";
       }
     });
 
@@ -226,10 +229,6 @@ export class D3mainComponent implements OnInit {
           .style("opacity", 0);
     };
     d3.timer(updateAnim);
-  } // END satInit
-
-
-} // END D3mainComponent
 
     function scatterPlot() {
       allSatelites.attr("transform", function(d) {
@@ -243,7 +242,8 @@ export class D3mainComponent implements OnInit {
       });
     };
 
-  }
+  } // END satInit
 
 
-}
+
+} // END D3mainComponent
