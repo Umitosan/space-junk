@@ -1,3 +1,8 @@
+html body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: black;
+}
+
 svg {
   /*background-image: url('./../earth1_scaled.png');*/
   background-color: black;
@@ -51,7 +56,3 @@ div.tooltip {
 
 
 /*nicky styles*/
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-}
