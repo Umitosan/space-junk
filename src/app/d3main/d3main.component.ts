@@ -55,6 +55,7 @@ export class D3mainComponent implements OnInit {
 
   createSatData(satArr) {
     let myArr: any[] = [];
+    let counter = 0;
     for (let i = 0; i < satArr.length ; i++) {
       let randSpeed: number = this.getRandomNum(3,20);
 
@@ -62,6 +63,10 @@ export class D3mainComponent implements OnInit {
       let powerApogee: number = (Math.pow(satArr[i].ApogeeKM, 1/2) + 50);
       let randCx: number = this.getRandomNum(1,powerApogee);
       let calcCY: number = Math.pow(( (powerApogee**2) - (randCx**2) ) ,1/2);
+
+      if (counter > 3) {
+
+      }
 
       let dateOfLaunch: string = satArr[i].DateOfLaunch;
 
@@ -128,12 +133,19 @@ export class D3mainComponent implements OnInit {
     // clear all cirlces before creating new ones
     d3.selectAll("circle").remove();
 
+
     let satData = this.satData;
     console.log("init data length", satData.length);
     // let newObject = this.newObject;
-    let running = this.running;
 
-    let svg = d3.select("svg");
+
+    let svg = d3.select("svg")
+      .call(d3.zoom().on("zoom", function () {
+         svg.attr("transform", d3.event.transform)
+      }))
+      .append("g");
+
+
 
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -191,6 +203,10 @@ export class D3mainComponent implements OnInit {
 
     let masterRad = 0;
 
+    let running = this.running;
+
+
+
     function updateAnim() {
 
       svg.selectAll(".satelite").attr("transform", function(d) {
@@ -210,7 +226,7 @@ export class D3mainComponent implements OnInit {
     allSatelites.on("mouseover", function(d) {
       d3.select(this)
       .style("stroke", "black").style("stroke-width", 5);
-      running = false;
+      this.running = false;
       console.log(d);
       div.transition()
           .duration(200)
@@ -224,13 +240,13 @@ export class D3mainComponent implements OnInit {
 
     function hideData(){
       d3.select(this).style("stroke", "black").style("stroke-width", 1);
-      running = true;
+      this.running = true;
       div.transition()
           .duration(500)
           .style("opacity", 0);
     };
-    d3.timer(updateAnim);
 
+    var masterTimer = d3.timer(updateAnim);
 
 
   } // END satInit
@@ -238,10 +254,27 @@ export class D3mainComponent implements OnInit {
   scatterPlot() {
     let d3 = this.d3;
     let svg = d3.select("svg");
-    alert("Success!");
     this.running = false;
+    d3.selectAll(".satelite")
+      .classed("satelite", false);
+    var satelites = d3.selectAll("circle")
 
-    let satelites = svg.selectAll(".satelite")
+    satelites.transition().transition()
+        .delay(0)
+        .duration(1000)
+        .attr("cx", function(d) {
+
+          return (Date.parse("2/5/2016"))/10000000000;
+          // return 100;
+        })
+        .attr("cy", function(d) {
+
+          return 100;
+        })
+        .attr("transform", function(d) {
+            return "rotate(0)";
+        });
+
 
     // satelites.attr("transform", function(d) {
     //   // d3.select(this)

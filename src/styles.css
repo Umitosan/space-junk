@@ -33,6 +33,10 @@ html body {
   fill: lightgrey;
 }
 
+circle {
+  stroke : #000000;
+}
+
 .earth {
   stroke : none;
   fill : none;
