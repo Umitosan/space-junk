@@ -1,1 +1,24 @@
+.header h1, .header h2 {
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+}
 
+.jumbotron {
+  background-image: url("../../assets/img/stars-bg.gif");
+}
+
+.github img {
+  margin: 0 auto;
+  width: 100px;
+}
+
+.sources h2 {
+  text-align: left;
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+}
+
+.footer {
+  margin-bottom: 0 !important;
+}
