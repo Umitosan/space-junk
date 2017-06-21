@@ -1,5 +1,7 @@
-
-  <h1>Sattellites, the junk in our skies</h1>
+<div class="header jumbotron">
+  <h1>Space Junk</h1>
+  <h2><em>Satellites, the junk in our skies</em></h2>
+</div>
 
   <p>Filter Satellites </p>
   <select (change)="onChange($event.target.value)">
@@ -41,3 +43,24 @@ public ApogeeKM: number,
 public LaunchMassKG: number,
 public DateOfLaunch: string,
 public LaunchSite: string -->
+
+
+<!-- {{(satToDisplay | async)?.Name}} -->
+
+<div class="footer jumbotron">
+  <div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4 github">
+      <a href="https://github.com/Umitosan" target="_blank"><img src="../../../assets/img/dom-github.png" alt="github-dom"></a>
+      <a href="https://github.com/kenr16" target="_blank"><img src="../../../assets/img/ken-github.png" alt="github-ken"></a>
+      <a href="https://github.com/nrsantamaria" target="_blank"><img src="../../../assets/img/nicky-github.png" alt="github-nicky"></a>
+    </div>
+    <div class="col-md-4 sources">
+      <h2>Source</h2>
+      <p><a href="http://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database" target="_blank">Union of Concerned Scientists</a></p>
+    </div>
+  </div>
+</div>
+
