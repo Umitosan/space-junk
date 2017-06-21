@@ -391,7 +391,7 @@
     "Users": "Civil",
     "Purpose": "Technology Development",
     "ApogeeKM": 626,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/28/2013",
     "LaunchSite": "Plesetsk Cosmodrome"
   },
@@ -699,7 +699,7 @@
     "Users": "Military/Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35789,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "4/28/2008",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -710,7 +710,7 @@
     "Users": "Military/Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35796,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/31/2013",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -2272,7 +2272,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 35854,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/16/2014",
     "LaunchSite": "Cape Canaveral"
   },
@@ -2327,7 +2327,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 501,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/19/2014",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -2404,7 +2404,7 @@
     "Users": "Military",
     "Purpose": "Technology Development",
     "ApogeeKM": 1504,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "3/31/2015",
     "LaunchSite": "Plesetsk Cosmodrome"
   },
@@ -2503,7 +2503,7 @@
     "Users": "Civil",
     "Purpose": "Technology Development",
     "ApogeeKM": 830,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "6/30/2003",
     "LaunchSite": "Plesetsk Cosmodrome"
   },
@@ -2514,7 +2514,7 @@
     "Users": "Civil",
     "Purpose": "Technology Development",
     "ApogeeKM": 1465,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/29/2013",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -3845,7 +3845,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 38662,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/17/2015",
     "LaunchSite": "Plesetsk Cosmodrome"
   },
@@ -4021,7 +4021,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35789,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "3/2/2015",
     "LaunchSite": "Cape Canaveral"
   },
@@ -4098,7 +4098,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35767,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/29/2013",
     "LaunchSite": "Guiana Space Center"
   },
@@ -4648,7 +4648,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1107,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/21/2010",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -4659,7 +4659,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1107,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "4/3/2012",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -4670,7 +4670,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1081,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/6/2013",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -4681,7 +4681,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1087,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "2/10/2016",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -6474,7 +6474,7 @@
     "Users": "Military",
     "Purpose": "Space Observation",
     "ApogeeKM": 35784,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/28/2014",
     "LaunchSite": "Cape Canaveral"
   },
@@ -6485,7 +6485,7 @@
     "Users": "Military",
     "Purpose": "Space Observation",
     "ApogeeKM": 35795,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/28/2014",
     "LaunchSite": "Cape Canaveral"
   },
@@ -6496,7 +6496,7 @@
     "Users": "Military",
     "Purpose": "Space Observation",
     "ApogeeKM": 35820,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/19/2016",
     "LaunchSite": "Cape Canaveral"
   },
@@ -6507,7 +6507,7 @@
     "Users": "Military",
     "Purpose": "Space Observation",
     "ApogeeKM": 35899,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/19/2016",
     "LaunchSite": "Cape Canaveral"
   },
@@ -7530,7 +7530,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 422,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/20/1998",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -7904,7 +7904,7 @@
     "Users": "Government/Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 779,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "2/18/1998",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -8619,7 +8619,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35789,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "4/28/2014",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -8894,7 +8894,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 668,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/20/2002",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -8905,7 +8905,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 717,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/20/2002",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -9092,7 +9092,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 35793,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/27/2014",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -10192,7 +10192,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35793,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/29/2009",
     "LaunchSite": "Guiana Space Center"
   },
@@ -11083,7 +11083,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 35787,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/8/2009",
     "LaunchSite": "Cape Canaveral"
   },
@@ -11369,7 +11369,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 486,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/24/2015",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -11457,7 +11457,7 @@
     "Users": "Civil",
     "Purpose": "Communications",
     "ApogeeKM": 2165,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/26/1994",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -11941,7 +11941,7 @@
     "Users": "Military",
     "Purpose": "Technology Development",
     "ApogeeKM": 1503,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "5/23/2014",
     "LaunchSite": "Plesetsk Cosmodrome"
   },
@@ -12238,7 +12238,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1203,
-    "LaunchMassKG": "5000+",
+    "LaunchMassKG": 5000,
     "DateOfLaunch": "2/3/2005",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12249,7 +12249,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1203,
-    "LaunchMassKG": "5000+",
+    "LaunchMassKG": 5000,
     "DateOfLaunch": "2/3/2005",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12260,7 +12260,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1200,
-    "LaunchMassKG": "5000+",
+    "LaunchMassKG": 5000,
     "DateOfLaunch": "6/15/2007",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12271,7 +12271,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1201,
-    "LaunchMassKG": "5000+",
+    "LaunchMassKG": 5000,
     "DateOfLaunch": "6/15/2007",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12282,7 +12282,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1205,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "4/15/2011",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -12293,7 +12293,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1201,
-    "LaunchMassKG": "5000+",
+    "LaunchMassKG": 5000,
     "DateOfLaunch": "4/15/2011",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -12403,7 +12403,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 39850,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/31/2004",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12414,7 +12414,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 39966,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/10/2007",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12425,7 +12425,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 35803,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "3/2/2011",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12436,7 +12436,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 35805,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "6/20/2012",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12447,7 +12447,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 35500,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "5/22/2014",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12458,7 +12458,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 35796,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/28/2016",
     "LaunchSite": "Cape Canaveral"
   },
@@ -12535,7 +12535,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35793,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "4/24/2010",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -12568,7 +12568,7 @@
     "Users": "Commercial",
     "Purpose": "Communications",
     "ApogeeKM": 35792,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "2/14/2012",
     "LaunchSite": "Baikonur Cosmodrome"
   },
@@ -12634,7 +12634,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 703,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/12/2009",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12645,7 +12645,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 704,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/29/2011",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12656,7 +12656,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 703,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/6/2011",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12667,7 +12667,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 704,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/15/2013",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12678,7 +12678,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 704,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "3/31/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12689,7 +12689,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 705,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/28/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12700,7 +12700,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 705,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/27/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12711,7 +12711,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 601,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "6/15/2010",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12722,7 +12722,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 673,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/19/2013",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12733,7 +12733,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 616,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/25/2013",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12744,7 +12744,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 594,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "6/29/2016",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12766,7 +12766,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 606,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/8/2004",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12777,7 +12777,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 598,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/8/2004",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12788,7 +12788,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 594,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/23/2006",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12799,7 +12799,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 595,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/23/2006",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12810,7 +12810,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 607,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/25/2008",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12821,7 +12821,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 603,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/25/2008",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12832,7 +12832,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 603,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/6/2010",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12843,7 +12843,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 602,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/6/2010",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12854,7 +12854,7 @@
     "Users": "Government",
     "Purpose": "Space Science",
     "ApogeeKM": 591,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/5/2005",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -12865,7 +12865,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 650,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/14/2012",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12876,7 +12876,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 651,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/14/2012",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -12931,7 +12931,7 @@
     "Users": "Military",
     "Purpose": "Technology Development",
     "ApogeeKM": 672,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "7/19/2013",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -13206,7 +13206,7 @@
     "Users": "Commercial",
     "Purpose": "Earth Observation",
     "ApogeeKM": 599,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/21/2013",
     "LaunchSite": "Dombarovsky Air Base"
   },
@@ -13294,7 +13294,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 11600,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "5/12/1996",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -13305,7 +13305,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 686,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "1/31/2015",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -13404,7 +13404,7 @@
     "Users": "Military",
     "Purpose": "Communications",
     "ApogeeKM": 886,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/6/2013",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -13701,7 +13701,7 @@
     "Users": "Civil",
     "Purpose": "Technology Development",
     "ApogeeKM": 406,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/19/2016",
     "LaunchSite": "International Space Station"
   },
@@ -13855,7 +13855,7 @@
     "Users": "Military",
     "Purpose": "Technology Development",
     "ApogeeKM": 879,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "5/5/2009",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -14031,7 +14031,7 @@
     "Users": "Military",
     "Purpose": "Technology Development",
     "ApogeeKM": 886,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/5/2013",
     "LaunchSite": "Vandenberg AFB"
   },
@@ -14559,7 +14559,7 @@
     "Users": "Government",
     "Purpose": "Communications",
     "ApogeeKM": 35805,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/5/2016",
     "LaunchSite": "Xichang Satellite Launch Center"
   },
@@ -14658,7 +14658,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 35795,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/12/2015",
     "LaunchSite": "Xichang Satellite Launch Center"
   },
@@ -15230,7 +15230,7 @@
     "Users": "Government",
     "Purpose": "Technology Development",
     "ApogeeKM": 501,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/18/2012",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15450,7 +15450,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 628,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/9/2010",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15461,7 +15461,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 668,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/22/2010",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15472,7 +15472,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 496,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/9/2011",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15483,7 +15483,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 507,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/29/2011",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15494,7 +15494,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 481,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "5/10/2012",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15516,7 +15516,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1089,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/25/2012",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15527,7 +15527,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1090,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/25/2012",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15538,7 +15538,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1081,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/25/2012",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15549,7 +15549,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1111,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/1/2013",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15560,7 +15560,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1111,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/1/2013",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15571,7 +15571,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1112,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/1/2013",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15582,7 +15582,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 513,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/29/2013",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15593,7 +15593,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1207,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/20/2013",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15604,7 +15604,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1095,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/9/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15615,7 +15615,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1093,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/9/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15626,7 +15626,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1094,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/9/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15637,7 +15637,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 494,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "9/8/2014",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15648,7 +15648,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1209,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "10/20/2014",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15659,7 +15659,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 513,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/14/2014",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15670,7 +15670,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 653,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/20/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15681,7 +15681,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1097,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/10/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15692,7 +15692,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1093,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/10/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15703,7 +15703,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1113,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/10/2014",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15714,7 +15714,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 491,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/27/2014",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15725,7 +15725,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1213,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "8/27/2015",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15802,7 +15802,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1205,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "12/15/2009",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -15813,7 +15813,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1164,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "3/5/2010",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15824,7 +15824,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1164,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "3/5/2010",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15835,7 +15835,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 1164,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "3/5/2010",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15868,7 +15868,7 @@
     "Users": "Government",
     "Purpose": "Earth Observation",
     "ApogeeKM": 798,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/11/2016",
     "LaunchSite": "Jiuquan Satellite Launch Center"
   },
@@ -15879,7 +15879,7 @@
     "Users": "Military",
     "Purpose": "Earth Observation",
     "ApogeeKM": 606,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "11/4/2004",
     "LaunchSite": "Taiyuan Launch Center"
   },
@@ -16000,7 +16000,7 @@
     "Users": "Government",
     "Purpose": "Communications",
     "ApogeeKM": 35812,
-    "LaunchMassKG": "",
+    "LaunchMassKG": 1001,
     "DateOfLaunch": "6/9/2008",
     "LaunchSite": "Xichang Satellite Launch Center"
   },

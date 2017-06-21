@@ -26,6 +26,8 @@ export class D3mainComponent implements OnInit {
   // newObject = null;
   running = true;
 
+  lightsOn: boolean = true;
+
   constructor(element: ElementRef,
               d3Service: D3Service,
               private router: Router,
@@ -55,12 +57,17 @@ export class D3mainComponent implements OnInit {
     let myArr: any[] = [];
     for (let i = 0; i < satArr.length ; i++) {
       let randSpeed: number = this.getRandomNum(3,20);
-      let randRad: number = this.getRandomNum(2,5);
+
+      let calcRad: number = ((satArr[i].LaunchMassKG**(1/3))/3)+1.7;
       let powerApogee: number = (Math.pow(satArr[i].ApogeeKM, 1/2) + 50);
       let randCx: number = this.getRandomNum(1,powerApogee);
       let calcCY: number = Math.pow(( (powerApogee**2) - (randCx**2) ) ,1/2);
+
+      let dateOfLaunch: string = satArr[i].DateOfLaunch;
+
       let newSat = {  name: satArr[i].Name , owner: satArr[i].CountryOperatorOwner,
-                      rad: randRad, speed: randSpeed,  cx: powerApogee, cy: calcCY, move: true }
+                      rad: calcRad, speed: randSpeed,  cx: powerApogee, cy: calcCY, move: true, date: dateOfLaunch }
+
       myArr.push(newSat);
     }
     this.satData = myArr;
@@ -113,6 +120,19 @@ export class D3mainComponent implements OnInit {
     // let newObject = this.newObject;
     let running = this.running;
 
+  turnLightsOff() {
+    document.getElementById("thisSvg").classList.remove('svg1');
+    document.getElementById("thisSvg").classList.add('svg2');
+    this.lightsOn = false;
+  }
+
+  turnLightsOn() {
+    document.getElementById("thisSvg").classList.remove('svg2');
+    document.getElementById("thisSvg").classList.add('svg1');
+    this.lightsOn = true;
+  }
+
+
     let svg = d3.select("svg");
 
     let div = d3.select("body").append("div")
@@ -136,7 +156,13 @@ export class D3mainComponent implements OnInit {
       } else if (d.owner === 'Multinational') {
         return "white";
       } else if (d.owner === 'China') {
+        return "gold";
+      } else if (d.owner === 'United Kingdom') {
+        return "blue";
+      } else if (d.owner === 'Japan') {
         return "red";
+      } else if (d.owner === 'ESA') {
+        return "lightblue";
       }
     });
 
@@ -163,21 +189,6 @@ export class D3mainComponent implements OnInit {
 
     function updateAnim() {
 
-      // if (newObject != null) {
-      //
-      //   let satelite = svg.selectAll(".start")
-      //       .data(satData, function(d, i) { return (i); } )
-      //       .enter().append("circle")
-      //       .attr("class", "satelite");
-      //
-      //   let allSatelites = svg.selectAll(".satelite")
-      //   allSatelites.attr("cx", function(d) { return d.cx; });
-      //   allSatelites.attr("cy", function(d) { return d.cy; });
-      //   allSatelites.attr("r", function(d) { return d.rad; });
-      //
-      //   newObject = null;
-      // }
-
       svg.selectAll(".satelite").attr("transform", function(d) {
         if (d.move === true) {
           return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
@@ -188,6 +199,7 @@ export class D3mainComponent implements OnInit {
       });
       if (masterRad === 10000) { masterRad = 0; }
       if (running === true) {  masterRad += 1; }
+
     } // END updateAnim
 
     // show data bubble
@@ -209,14 +221,29 @@ export class D3mainComponent implements OnInit {
     function hideData(){
       d3.select(this).style("stroke", "black").style("stroke-width", 1);
       running = true;
-      // for (let i = 0; i<satData.length; i++)	{
-      // 	console.log(satData[i]['move']=false);
-      // };
       div.transition()
           .duration(500)
           .style("opacity", 0);
     };
-    d3.timer(updateAnim, 0, );
+    d3.timer(updateAnim);
   } // END satInit
 
+
 } // END D3mainComponent
+
+    function scatterPlot() {
+      allSatelites.attr("transform", function(d) {
+        running = false;
+        d3.select(this)
+        .transition()
+          .delay(0)
+          .duration(1000)
+          .attr("cx", d.cx)
+          .attr("cy", d.cy);
+      });
+    };
+
+  }
+
+
+}
