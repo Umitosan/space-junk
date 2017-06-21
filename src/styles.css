@@ -3,7 +3,8 @@ html body {
   background-color: black;
 }
 
-.svg1 {
+
+.lightsOn {
   background-color: white;
   background-image: url('./../Sphererotating.gif');
   background-repeat: no-repeat;
@@ -13,7 +14,7 @@ html body {
   height: 1200px;
 }
 
-.svg2 {
+.lightsOff {
   background-color: black;
   background-image: url('./../earth_anim.gif');
   background-repeat: no-repeat;
