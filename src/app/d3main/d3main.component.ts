@@ -214,7 +214,7 @@ export class D3mainComponent implements OnInit {
       div.transition()
           .duration(200)
           .style("opacity", .9);
-      div	.html(d.name + "<br/>"  + d.owner)
+      div	.html("<strong> Name: </strong>" + d.name + "<br/> <strong> Country: </strong>" + d.owner)
           .style("left", (d3.event.pageX) + "px")
           .style("top", (d3.event.pageY - 28) + "px");
     })
