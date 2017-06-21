@@ -22,21 +22,3 @@ export class SatelliteService {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-// import { Injectable } from '@angular/core';
-//
-// @Injectable()
-// export class SatelliteService {
-//
-//   constructor() { }
-//
-// }
