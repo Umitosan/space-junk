@@ -20,10 +20,9 @@ export class D3mainComponent implements OnInit {
   readyToDisplay: boolean = false;
   desiredFilter: string = "none";
   masterRad: number = 0;
-  countryFilter: any;
+  countryPipeTransform: any;
 
   satData: any[] = [];
-  // newObject = null;
   running = true;
 
   lightsOn: boolean = true;
@@ -36,7 +35,7 @@ export class D3mainComponent implements OnInit {
               countryPipe: CountryPipe) {
         this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
         this.parentNativeElement = element.nativeElement;
-        this.countryFilter = countryPipe;
+        this.countryPipeTransform = countryPipe.transform;
   }
 
   ngOnInit() {
@@ -104,7 +103,7 @@ export class D3mainComponent implements OnInit {
     this.satData = [];
     this.desiredFilter = dropdownOption;
     this.readyToDisplay = true;
-    let someArr: any[] = this.countryFilter.transform(allSats, this.desiredFilter);
+    let someArr: any[] = this.countryPipeTransform(allSats, this.desiredFilter);
     this.satData = someArr;
     console.log(this.satData.length);
   }
@@ -243,7 +242,5 @@ export class D3mainComponent implements OnInit {
     };
 
   } // END satInit
-
-
 
 } // END D3mainComponent
