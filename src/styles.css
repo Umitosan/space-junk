@@ -3,6 +3,7 @@ html body {
   background-color: black;
 }
 
+
 .lightsOn {
   background-color: white;
   background-image: url('./../Sphererotating.gif');
@@ -31,6 +32,10 @@ html body {
 .satelite {
   stroke : #000000;
   fill: lightgrey;
+}
+
+circle {
+  stroke : #000000;
 }
 
 .earth {
