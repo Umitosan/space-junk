@@ -66,7 +66,7 @@ export class D3mainComponent implements OnInit {
       let dateOfLaunch: string = satArr[i].DateOfLaunch;
 
       let newSat = {  name: satArr[i].Name , owner: satArr[i].CountryOperatorOwner,
-                      rad: calcRad, speed: randSpeed,  cx: powerApogee, cy: calcCY, move: true, date: dateOfLaunch }
+                      rad: calcRad, speed: randSpeed,  cx: randCx, cy: calcCY, move: true, date: dateOfLaunch }
 
       myArr.push(newSat);
     }
@@ -97,6 +97,7 @@ export class D3mainComponent implements OnInit {
 
   anotherOneClicked() {
     console.log("anotherOneClicked yup");
+    this.scatterPlot();
   }
 
   onChange(dropdownOption) {
@@ -230,20 +231,26 @@ export class D3mainComponent implements OnInit {
     };
     d3.timer(updateAnim);
 
-    function scatterPlot() {
-      allSatelites.attr("transform", function(d) {
-        running = false;
-        d3.select(this)
-        .transition()
-          .delay(0)
-          .duration(1000)
-          .attr("cx", d.cx)
-          .attr("cy", d.cy);
-      });
-    };
+
 
   } // END satInit
 
+  scatterPlot() {
+    let d3 = this.d3;
+    let svg = d3.select("svg");
+    alert("Success!");
+    this.running = false;
 
+    let satelites = svg.selectAll(".satelite")
+
+    // satelites.attr("transform", function(d) {
+    //   // d3.select(this)
+    //   // .transition()
+    //   //   .delay(0)
+    //   //   .duration(1000)
+    //   //   .attr("cx", d.cx)
+    //   //   .attr("cy", d.cy);
+    // });
+  }
 
 } // END D3mainComponent
