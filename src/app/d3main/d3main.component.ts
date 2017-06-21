@@ -149,23 +149,23 @@ export class D3mainComponent implements OnInit {
     // color by country
     allSatelites.style("fill", function(d) {
       if(d.owner === 'USA') {
-        return "steelblue";
+        return "#0042B2";
       } else if (d.owner === 'Russia') {
-        return "darkred";
+        return "#662700";
       } else if (d.owner === 'Multinational') {
         return "white";
       } else if (d.owner === 'China') {
-        return "gold";
+        return "#B20015";
       } else if (d.owner === 'United Kingdom') {
-        return "blue";
+        return "#19FBFF";
       } else if (d.owner === 'Japan') {
-        return "red";
+        return "#B24300";
       } else if (d.owner === 'ESA') {
-        return "lightblue";
+        return "#006466";
       } else if (d.owner === 'Germany') {
-        return "green";
+        return "#006616";
       } else if (d.owner === 'India') {
-        return "yellow";
+        return "#B27F12";
       }
     });
 
