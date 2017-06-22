@@ -162,7 +162,8 @@ export class D3mainComponent implements OnInit {
       .call(d3.zoom().on("zoom", function () {
          svg.attr("transform", d3.event.transform)
       }))
-      .append("g");
+      .append("g")
+      ;
 
 
 
@@ -228,11 +229,12 @@ export class D3mainComponent implements OnInit {
         .attr("cy", d.cy);
     });
 
-    d3.select("svg").append("circle")
-      .attr("class", "earth")
+    d3.select("g").append("circle")
+      .attr("fill", "url(#earth)")
       .attr("cx", 500)
       .attr("cy", 500)
-      .attr("r", 35);
+      .attr("r", 50);
+
 
     // allSatelites.attr("cx", function(d) { return d.cx; });
     // allSatelites.attr("cy", function(d) { return d.cy; });
@@ -295,7 +297,11 @@ export class D3mainComponent implements OnInit {
 
   scatterPlot(satData, myd3) {
     let d3 = myd3;
-    let svg = d3.select("svg");
+    let svg = d3.select("svg")
+    .call(d3.zoom().on("zoom", function () {
+    }));
+
+
 
     // var xScale = d3.scale.linear()
     // .domain([0, 800])
