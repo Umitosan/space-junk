@@ -7,35 +7,35 @@
 <div class="filter row">
   <p class="filters">Countries</p>
   <select (change)="onCountrySelectChange($event.target.value)">
-    <option value="none" selected="selected">None</option>
-    <option value="USA">USA</option>
+    <option value="ALL">ALL Countries</option>
     <option value="Argentina">Argentina</option>
     <option value="Canada">Canada</option>
     <option value="China">China</option>
-    <option value="Multinational">Multinational</option>
-    <option value="Japan">Japan</option>
-    <option value="Russia">Russia</option>
+    <option value="ESA">European Space Agency</option>
+    <option value="France">France</option>
     <option value="Germany">Germany</option>
     <option value="India">India</option>
-    <option value="ESA">European Space Agency</option>
-    <option value="Spain">Spain</option>
+    <option value="Japan">Japan</option>
+    <option value="Multinational">Multinational</option>
+    <option value="Russia">Russia</option>
     <option value="Saudi Arabia">Saudi Arabia</option>
-    <option value="France">France</option>
-    <option value="ALL">ALL Countries</option>
+    <option value="Spain">Spain</option>
+    <option value="United Kingdome">United Kingdom</option>
+    <option value="USA">USA</option>
+    <option value="none" selected="selected">None</option>
   </select>
 
   <p class="filters">Purpose</p>
   <select (change)="onPurposeSelectChange($event.target.value)">
-    <option value="none" selected="selected">None</option>
+    <option value="ALL">ALL Purposes</option>
     <option value="Communications">Communications</option>
-    <option value="Space Observation">Space Observation</option>
-    <option value="Space Science">Space Science</option>
     <option value="Earth Observation">Earth Observation</option>
     <option value="Earth Science">Earth Science</option>
-    <option value="Technology Development">Technology Development</option>
     <option value="Navigation/Global Positioning">Navigation/Global Positioning</option>
+    <option value="Space Observation">Space Observation</option>
+    <option value="Space Science">Space Science</option>
     <option value="Technology Development">Technology Development</option>
-    <option value="ALL">ALL Purposes</option>
+    <option value="none" selected="selected">None</option>
   </select>
 
   <br>
@@ -64,10 +64,12 @@
     <div class="col-md-4">
 
     </div>
-    <div class="col-md-4 github">
-      <a href="https://github.com/Umitosan" target="_blank"><img src="../../../assets/img/dom-github.png" alt="github-dom"></a>
-      <a href="https://github.com/kenr16" target="_blank"><img src="../../../assets/img/ken-github.png" alt="github-ken"></a>
-      <a href="https://github.com/nrsantamaria" target="_blank"><img src="../../../assets/img/nicky-github.png" alt="github-nicky"></a>
+    <div class="col-md-4">
+      <div class="center-block">
+        <a href="https://github.com/Umitosan" target="_blank"><img class="github" src="../../../assets/img/dom-github.png" alt="github-dom"></a>
+        <a href="https://github.com/kenr16" target="_blank"><img class="github" src="../../../assets/img/ken-github.png" alt="github-ken"></a>
+        <a href="https://github.com/nrsantamaria" target="_blank"><img class="github" src="../../../assets/img/nicky-github.png" alt="github-nicky"></a>
+      </div>
     </div>
     <div class="col-md-4 sources">
       <h2>Source</h2>

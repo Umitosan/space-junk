@@ -8,7 +8,7 @@ html body {
   background-image: url('./../Sphererotating.gif');
   background-repeat: no-repeat;
   background-size: 100px;
-  background-position: 450px 450px;
+  background-position: 1200px 600px;
   width: 2000px;
   height: 1200px;
 }
@@ -18,7 +18,7 @@ html body {
   background-image: url('./../earth_anim.gif');
   background-repeat: no-repeat;
   background-size: 100px;
-  background-position: 450px 450px;
+  background-position: 1200px 600px;
   width: 2000px;
   height: 1200px;
 }

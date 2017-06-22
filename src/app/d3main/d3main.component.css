@@ -16,8 +16,11 @@
   background-image: url("../../assets/img/stars-bg.gif");
 }
 
-.github img {
-  margin: 0 auto;
+.center-block {
+  margin-left: 25%;
+}
+
+.github {
   width: 100px;
 }
 
