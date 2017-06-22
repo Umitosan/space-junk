@@ -107,7 +107,7 @@ export class D3mainComponent implements OnInit {
 
   anotherOneClicked() {
     console.log("anotherOneClicked yup");
-    this.scatterPlot();
+    this.scatterPlot(this.satData);
   }
 
   onCountrySelectChange(dropdownOption) {
@@ -176,7 +176,7 @@ export class D3mainComponent implements OnInit {
       .style("opacity", 0);
 
     //for each item in satData create a new satelite circle element
-    let satelite = svg.selectAll()
+    svg.selectAll()
         .data(satData, function(d, i) { return (i); } )
         .enter().append("circle")
         .attr("class", "satelite");
@@ -275,30 +275,34 @@ export class D3mainComponent implements OnInit {
 
   } // END satInit
 
-  scatterPlot() {
+  scatterPlot(satData) {
     let d3 = this.d3;
     let svg = d3.select("svg");
     this.running = false;
-    d3.selectAll(".satelite")
-      .classed("satelite", false);
-    var satelites = d3.selectAll("circle")
 
 
-    satelites.transition()
-        .delay(0)
-        .duration(1000)
-        .attr("cx", function(d) {
+    let satelites = svg.selectAll(".satelite")
+        .data(satData)
+        .classed("satelite", false);
 
-          return (Date.parse("2/5/2016"))/10000000000;
-          // return 100;
-        })
-        .attr("cy", function(d) {
+    console.log(satelites);
 
-          return 0;
-        })
-        .attr("transform", function(d) {
-            return "rotate(0)";
-        });
+      // .transition()
+      // .delay(0)
+      // .duration(1000)
+      // .attr("cx", function(d) {
+      //   return (Date.parse(d.date))/10000000000;
+      //   // return 100;
+      // })
+      // .attr("cy", function(d) {
+      //   return 100;
+      // })
+      // .attr("transform", "rotate(0)");
+
+        // .attr("transform", function(d) {
+        //   console.log(d);
+        //   d3.select(this);
+        // });
 
 
     // satelites.attr("transform", function(d) {
