@@ -169,8 +169,6 @@ export class D3mainComponent implements OnInit {
       }))
       .append("g");
 
-
-
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
@@ -251,7 +249,6 @@ export class D3mainComponent implements OnInit {
       d3.select(this)
       .style("stroke", "black").style("stroke-width", 5);
       running = false;
-      // console.log(d);
       div.transition()
           .duration(200)
           .style("opacity", .9);
@@ -271,8 +268,6 @@ export class D3mainComponent implements OnInit {
     };
 
     var masterTimer = d3.timer(updateAnim);
-
-
   } // END satInit
 
   scatterPlot() {
@@ -299,8 +294,6 @@ export class D3mainComponent implements OnInit {
         .attr("transform", function(d) {
             return "rotate(0)";
         });
-
-
     // satelites.attr("transform", function(d) {
     //   // d3.select(this)
     //   // .transition()
