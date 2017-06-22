@@ -5,12 +5,13 @@ import { Satellite } from '../satellite.model';
 import { SatelliteService } from '../satellite.service';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { CountryPipe } from '../country.pipe';
+import { PurposePipe } from '../purpose.pipe';
 
 @Component({
   selector: 'app-d3main',
   templateUrl: './d3main.component.html',
   styleUrls: ['./d3main.component.css'],
-  providers: [SatelliteService, CountryPipe]
+  providers: [SatelliteService, CountryPipe, PurposePipe]
 })
 
 export class D3mainComponent implements OnInit {
@@ -18,25 +19,25 @@ export class D3mainComponent implements OnInit {
   private parentNativeElement: any;
   satellites: any[];
   readyToDisplay: boolean = false;
-  desiredFilter: string = "none";
   masterRad: number = 0;
-  countryFilter: any;
+  countryPipeTransform: any;
+  purposePipeTransform: any;
+  countrySelected: string = "none";
+  purposeSelected: string = "none";
 
   satData: any[] = [];
-  // newObject = null;
   running = true;
 
-  lightsOn: boolean = true;
+  themeStatus: string = "lightsOff";
 
-  constructor(element: ElementRef,
-              d3Service: D3Service,
-              private router: Router,
-              private database: AngularFireDatabase,
-              private satelliteService: SatelliteService,
-              countryPipe: CountryPipe) {
+  constructor(element: ElementRef, d3Service: D3Service, private router: Router,
+              private database: AngularFireDatabase, private satelliteService: SatelliteService,
+              countryPipe: CountryPipe, purposePipe: PurposePipe
+              ) {
         this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
         this.parentNativeElement = element.nativeElement;
-        this.countryFilter = countryPipe;
+        this.countryPipeTransform = countryPipe.transform;
+        this.purposePipeTransform = purposePipe.transform;
   }
 
   ngOnInit() {
@@ -95,7 +96,9 @@ export class D3mainComponent implements OnInit {
   }
 
   startButtonClicked() {
+    let sats: Satellite[] = this.satData;
     if (this.readyToDisplay === true) {
+      this.filterSatData();
       this.createSatData(this.satData)
       this.satInit(this.d3);
       this.readyToDisplay = false;
@@ -107,31 +110,50 @@ export class D3mainComponent implements OnInit {
     this.scatterPlot();
   }
 
-  onChange(dropdownOption) {
-    let allSats: any[] = this.satellites;
-    this.satData = [];
-    this.desiredFilter = dropdownOption;
+  onCountrySelectChange(dropdownOption) {
+    this.countrySelected = dropdownOption;
+    console.log("country opt: ", this.countrySelected);
     this.readyToDisplay = true;
-    let someArr: any[] = this.countryFilter.transform(allSats, this.desiredFilter);
-    this.satData = someArr;
-    console.log(this.satData.length);
+  }
+
+  onPurposeSelectChange(dropdownOption) {
+    this.purposeSelected = dropdownOption;
+    console.log("country opt: ", this.purposeSelected);
+    this.readyToDisplay = true;
+  }
+
+  filterSatData() {
+    let countryOpt = this.countrySelected;
+    let purposeOpt = this.purposeSelected;
+    let satsToBeFiltered: Satellite[] = this.satellites;
+    let filteredSats1: Satellite[] = [];
+    let filteredSats2: Satellite[] = [];
+    // run through filters depending on which changed
+    if (countryOpt !== 'none') {
+      filteredSats1 = this.countryPipeTransform(satsToBeFiltered, countryOpt);
+      filteredSats2 = filteredSats1;
+      if (purposeOpt !== 'none') {
+        filteredSats2 = this.purposePipeTransform(filteredSats1, purposeOpt);
+      }
+    } else {
+      filteredSats2 = this.purposePipeTransform(satsToBeFiltered, purposeOpt);
+    }
+    this.satData = filteredSats2;
+    console.log("filteredSats2 length= ", filteredSats2.length);
   }
 
   turnLightsOff() {
-    document.getElementById("thisSvg").classList.remove('svg1');
-    document.getElementById("thisSvg").classList.add('svg2');
-    this.lightsOn = false;
+    this.themeStatus = "lightsOff";
   }
 
   turnLightsOn() {
-    document.getElementById("thisSvg").classList.remove('svg2');
-    document.getElementById("thisSvg").classList.add('svg1');
-    this.lightsOn = true;
+    this.themeStatus = "lightsOn";
   }
 
-  satInit(myD3) {
 
-    let d3= myD3;
+  satInit(myd3) {
+    let d3 = myd3;
+
     // clear all cirlces before creating new ones
     d3.selectAll("circle").remove();
 
@@ -229,7 +251,7 @@ export class D3mainComponent implements OnInit {
       d3.select(this)
       .style("stroke", "black").style("stroke-width", 5);
       running = false;
-      console.log(d);
+      // console.log(d);
       div.transition()
           .duration(200)
           .style("opacity", .9);
@@ -288,5 +310,6 @@ export class D3mainComponent implements OnInit {
     //   //   .attr("cy", d.cy);
     // });
   }
+
 
 } // END D3mainComponent
