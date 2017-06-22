@@ -4,6 +4,17 @@
   color: white;
 }
 
+.navigation {
+  display:block;
+  margin:auto;
+  width: 2000px;
+}
+
+.navbar {
+  padding: 1%;
+  margin-bottom: 0 !important;
+}
+
 .filter {
   padding-left: 5%;
 }
@@ -40,4 +51,8 @@
 .filters {
   color: grey;
   font-size: 20px;
+}
+
+.btn-primary {
+  background-color: black;
 }
