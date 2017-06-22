@@ -124,8 +124,8 @@ export class D3mainComponent implements OnInit {
   }
 
   graphClicked() {
-    console.log("anotherOneClicked yup");
-    this.scatterPlot(this.satData);
+    console.log("Graph Activated");
+    this.scatterPlot(this.satData, this.d3);
   }
 
   turnLightsOff() {
@@ -164,7 +164,7 @@ export class D3mainComponent implements OnInit {
       }))
       .append("g");
 
-      
+
 
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -271,93 +271,47 @@ export class D3mainComponent implements OnInit {
     var masterTimer = d3.timer(updateAnim);
   } // END satInit
 
-  scatterPlot(satData) {
-    let d3 = this.d3;
+
+
+  scatterPlot(satData, myd3) {
+    let d3 = myd3;
     let svg = d3.select("svg");
-    this.running = false;
+
+
+    // var xScale = d3.scale.linear()
+    // .domain([0, 800])
+    // .range([300, 1100]);
+    //
+    // var xScale = d3.scale.linear()
+    // .domain([0, 850])
+    // .range([-350, 150]);
 
 
 
-    let satelites = svg.selectAll(".satelite")
+    var satelites = d3.selectAll(".satelite")
         .data(satData)
-        .classed("satelite", false);
-
-    console.log(satelites);
-
-      // .transition()
-      // .delay(0)
-      // .duration(1000)
-      // .attr("cx", function(d) {
-      //   return (Date.parse(d.date))/10000000000;
-      //   // return 100;
-      // })
-      // .attr("cy", function(d) {
-      //   return 100;
-      // })
-      // .attr("transform", "rotate(0)");
-
-        // .attr("transform", function(d) {
-        //   console.log(d);
-        //   d3.select(this);
-        // });
-
-    satelites.transition()
+        .attr("class", "orbitalObject")
+        .classed("satelite", false)
+        .transition()
         .delay(0)
         .duration(1000)
-        .attr("cx", function(d) {
-          return (Date.parse("2/5/2016"))/10000000000;
-          // return 100;
-        })
-        .attr("cy", function(d) {
+        .attr("transform", "translate(500,500), rotate(0)");
 
-          return 0;
-        })
-        .attr("transform", function(d) {
-            return "rotate(0)";
-        });
+    satelites.attr("cx", function(d) {
+      // return (Date.parse(d.date))/10000000000;
+      return (Math.floor(Math.random() * 600)+200);
+    })
+    .attr("cy", function(d) {
+      return (Math.floor(Math.random() * 400)-450);
+    })
+    ;
 
-    // satelites.attr("transform", function(d) {
-    //   // d3.select(this)
-    //   // .transition()
-    //   //   .delay(0)
-    //   //   .duration(1000)
-    //   //   .attr("cx", d.cx)
-    //   //   .attr("cy", d.cy);
-    // });
   }
 
-  // scatterPlot() {
-  //   let d3 = this.d3;
-  //   let svg = d3.select("svg");
-  //   this.running = false;
-  //   d3.selectAll(".satelite")
-  //     .classed("satelite", false);
-  //   var satelites = d3.selectAll("circle")
-  //
-  //   satelites.transition()
-  //       .delay(0)
-  //       .duration(1000)
-  //       .attr("cx", function(d) {
-  //
-  //         return (Date.parse("2/5/2016"))/10000000000;
-  //         // return 100;
-  //       })
-  //       .attr("cy", function(d) {
-  //
-  //         return 100;
-  //       })
-  //       .attr("transform", function(d) {
-  //           return "rotate(0)";
-  //       });
-  //   // satelites.attr("transform", function(d) {
-  //   //   // d3.select(this)
-  //   //   // .transition()
-  //   //   //   .delay(0)
-  //   //   //   .duration(1000)
-  //   //   //   .attr("cx", d.cx)
-  //   //   //   .attr("cy", d.cy);
-  //   // });
-  // }
+  // .attr("transform", function(d) {
+  //     return "rotate(0)";
+  // });
+
 
 
 } // END D3mainComponent
