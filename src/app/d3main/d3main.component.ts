@@ -169,8 +169,6 @@ export class D3mainComponent implements OnInit {
       }))
       .append("g");
 
-
-
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
@@ -186,23 +184,23 @@ export class D3mainComponent implements OnInit {
     // color by country
     allSatelites.style("fill", function(d) {
       if(d.owner === 'USA') {
-        return "steelblue";
+        return "#0042B2";
       } else if (d.owner === 'Russia') {
-        return "darkred";
+        return "#662700";
       } else if (d.owner === 'Multinational') {
         return "white";
       } else if (d.owner === 'China') {
-        return "gold";
+        return "#B20015";
       } else if (d.owner === 'United Kingdom') {
-        return "blue";
+        return "#19FBFF";
       } else if (d.owner === 'Japan') {
-        return "red";
+        return "#B24300";
       } else if (d.owner === 'ESA') {
-        return "lightblue";
+        return "#006466";
       } else if (d.owner === 'Germany') {
-        return "green";
+        return "#006616";
       } else if (d.owner === 'India') {
-        return "yellow";
+        return "#B27F12";
       }
     });
 
@@ -251,7 +249,6 @@ export class D3mainComponent implements OnInit {
       d3.select(this)
       .style("stroke", "black").style("stroke-width", 5);
       running = false;
-      // console.log(d);
       div.transition()
           .duration(200)
           .style("opacity", .9);
@@ -271,14 +268,13 @@ export class D3mainComponent implements OnInit {
     };
 
     var masterTimer = d3.timer(updateAnim);
-
-
   } // END satInit
 
   scatterPlot(satData) {
     let d3 = this.d3;
     let svg = d3.select("svg");
     this.running = false;
+
 
 
     let satelites = svg.selectAll(".satelite")
@@ -304,6 +300,21 @@ export class D3mainComponent implements OnInit {
         //   d3.select(this);
         // });
 
+    satelites.transition()
+        .delay(0)
+        .duration(1000)
+        .attr("cx", function(d) {
+
+          return (Date.parse("2/5/2016"))/10000000000;
+          // return 100;
+        })
+        .attr("cy", function(d) {
+
+          return 0;
+        })
+        .attr("transform", function(d) {
+            return "rotate(0)";
+        });
 
     // satelites.attr("transform", function(d) {
     //   // d3.select(this)

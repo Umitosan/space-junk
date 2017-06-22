@@ -4,6 +4,14 @@
   color: white;
 }
 
+.filter {
+  padding-left: 5%;
+}
+
+.filter p {
+  color: white;
+}
+
 .jumbotron {
   background-image: url("../../assets/img/stars-bg.gif");
 }
