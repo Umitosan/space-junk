@@ -2,11 +2,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Satellite } from './satellite.model';
 
 @Pipe({
-  name: 'country',
+  name: 'purpose',
   pure: true
 })
 
-export class CountryPipe implements PipeTransform {
+export class PurposePipe implements PipeTransform {
 
   transform(input: Satellite[], desiredFilter){
     var output: Satellite[] = [];
@@ -15,7 +15,7 @@ export class CountryPipe implements PipeTransform {
             output = input;
           } else {
             for (let i = 0; i < input.length; i++) {
-              if (input[i].CountryOperatorOwner === desiredFilter) {
+              if (input[i].Purpose === desiredFilter) {
                 output.push(input[i]);
               }
             }

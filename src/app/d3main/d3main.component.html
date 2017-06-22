@@ -3,19 +3,47 @@
   <h2><em>Satellites, the junk in our skies</em></h2>
 </div>
 
+
 <div class="filter row">
-  <p>Filter Satellites </p>
-  <select (change)="onChange($event.target.value)">
+  <p class="filters">Countries</p>
+  <select (change)="onCountrySelectChange($event.target.value)">
     <option value="none" selected="selected">None</option>
     <option value="USA">USA</option>
-    <option value="Multinational">Multinational</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Canada">Canada</option>
     <option value="China">China</option>
+    <option value="Multinational">Multinational</option>
     <option value="Japan">Japan</option>
     <option value="Russia">Russia</option>
-    <option value="Canada">Canada</option>
     <option value="Germany">Germany</option>
     <option value="India">India</option>
+    <option value="ESA">European Space Agency</option>
+    <option value="Spain">Spain</option>
+    <option value="Saudi Arabia">Saudi Arabia</option>
+    <option value="France">France</option>
+    <option value="ALL">ALL Countries</option>
   </select>
+
+  <p class="filters">Purpose</p>
+  <select (change)="onPurposeSelectChange($event.target.value)">
+    <option value="none" selected="selected">None</option>
+    <option value="Communications">Communications</option>
+    <option value="Space Observation">Space Observation</option>
+    <option value="Space Science">Space Science</option>
+    <option value="Earth Observation">Earth Observation</option>
+    <option value="Earth Science">Earth Science</option>
+    <option value="Technology Development">Technology Development</option>
+    <option value="Navigation/Global Positioning">Navigation/Global Positioning</option>
+    <option value="Technology Development">Technology Development</option>
+    <option value="ALL">ALL Purposes</option>
+  </select>
+
+  <br>
+  <br>
+
+  <label>New Slider:</label>
+  <input type="range" min="1970" max="2016" value=1970 step="1" (change)="showMinValue($event.target.value)" />
+  <span id="range">{{minBarValue}}</span>
 
   <button class="btn btn-success" (click)="startButtonClicked()">Start</button>
   <button class="btn btn-info" (click)="anotherOneClicked()">Another One</button>
