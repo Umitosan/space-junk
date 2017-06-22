@@ -49,16 +49,22 @@
   <button id="graphBtn" class="btn btn-info" (click)="graphClicked()">Graph</button>
   <button id="offBtn" class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
   <button id="onBtn" class="btn btn-warning" (click)="turnLightsOn()">Lights On</button>
+  <button id="dashBtn" class="btn btn-default" (click)="dashClicked()">Dashboard</button>
 </div>
 
-  <div id="lowEarthOrbit">
-    <div id="earthImg"></div>
-      <svg [ngClass]='themeStatus' id="thisSvg">
-        <!-- <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
-        <svg:circle class="start"></svg:circle> -->
-         <circle r="35" cx="500" cy="500"></circle>
-      </svg>
+<div id="lowEarthOrbit">
+  <div id="earthImg"></div>
+    <svg [ngClass]='themeStatus' id="thisSvg">
+       <circle r="35" cx="500" cy="500"></circle>
+    </svg>
+</div>
+
+<div id="dashboardArea">
+  <div id="dash">
+
   </div>
+</div>
+
 
 <div class="footer jumbotron">
   <div class="row">

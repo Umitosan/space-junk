@@ -15,7 +15,7 @@ import { PurposePipe } from '../purpose.pipe';
 })
 
 export class D3mainComponent implements OnInit {
-  private d3: D3; // <-- Define the private member which will hold the d3 reference
+  d3: D3; // <-- Define the private member which will hold the d3 reference
   private parentNativeElement: any;
   satellites: any[];
   readyToDisplay: boolean = false;
@@ -156,15 +156,12 @@ export class D3mainComponent implements OnInit {
 
     let satData = this.satData;
     console.log("init data length", satData.length);
-    // let newObject = this.newObject;
 
-    let svg = d3.select("svg")
+    let svg = d3.select("#thisSvg")
       .call(d3.zoom().on("zoom", function () {
          svg.attr("transform", d3.event.transform)
       }))
       .append("g");
-
-      
 
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -359,5 +356,25 @@ export class D3mainComponent implements OnInit {
   //   // });
   // }
 
+  dashClicked() {
+    let satsArr = this.filterSatData;
+    let d3 = this.d3;
+
+    let satData: any = this.satData;
+    // console.log("init data length", satData.length);
+    let dash = d3.select('#dash').append('g');
+
+    // var divs = d3.select('#parent').selectAll('p').data(data).enter().append('div');
+    //   divs.append('p')
+    //   divs.append('p')
+    console.log(dash.selectAll('g'));
+    dash.selectAll('g')
+        .data(satData)
+        .enter().append("dot")
+        .attr("class", "dot");
+
+
+
+  }
 
 } // END D3mainComponent
