@@ -341,7 +341,7 @@ export class D3mainComponent implements OnInit {
         .duration(1000)
         .attr("transform", "translate(500,500), rotate(0)");
 
-    satelites.attr("cx", function(d) {
+    satelites.transition().attr("cx", function(d) {
       // return (Date.parse(d.date))/10000000000;
       return (Date.parse(d.date)/1150000000)+100;
       // return (Math.floor(Math.random() * 600)+200);

@@ -23,7 +23,16 @@
 
 .navbar {
   padding: 1%;
+  padding-left: 70px;
   margin-bottom: 0 !important;
+}
+
+#instruct {
+  display: inline;
+  padding-left: 30px;
+  font-size: 20px;
+
+  color: grey;
 }
 
 .filter {
