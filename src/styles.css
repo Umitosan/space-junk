@@ -3,22 +3,36 @@ html body {
   background-color: black;
 }
 
+svg {
+  display:block;
+  margin:auto;
+}
+
+.sphere {
+  display: none;
+}
+
+.earth {
+  display: none;
+}
+
 .lightsOn {
   background-color: white;
-  background-image: url('./../Sphererotating.gif');
+
+  width: 2000px;
+  height: 1200px;
+
+/*   background-image: url('./../Sphererotating.gif');
   background-repeat: no-repeat;
   background-size: 100px;
   background-position: 450px 450px;
   width: 2000px;
-  height: 1000px;
+  height: 1000px; */
+
 }
 
 .lightsOff {
   background-color: black;
-  background-image: url('./../earth_anim.gif');
-  background-repeat: no-repeat;
-  background-size: 100px;
-  background-position: 450px 450px;
   width: 2000px;
   height: 1000px;
 }
@@ -35,11 +49,6 @@ html body {
 
 circle {
   stroke : #000000;
-}
-
-.earth {
-  stroke : none;
-  fill : none;
 }
 
 #startBtn {

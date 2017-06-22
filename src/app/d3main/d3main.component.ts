@@ -170,6 +170,8 @@ export class D3mainComponent implements OnInit {
       .attr("class", "tooltip")
       .style("opacity", 0);
 
+
+
     //for each item in satData create a new satelite circle element
     svg.selectAll()
         .data(satData, function(d, i) { return (i); } )
@@ -200,6 +202,14 @@ export class D3mainComponent implements OnInit {
         return "#B27F12";
       } else if (d.owner === 'France') {
         return "#ff33cc";
+      } else if (d.owner === 'Canada') {
+          return "#BF0031";
+      } else if (d.owner === 'Argentina') {
+        return "#00E5AA";
+      } else if (d.owner === 'Spain') {
+        return "#CECD00";
+      } else if (d.owner === 'Saudi Arabia') {
+        return "#C88200";
       }
     });
 
@@ -217,6 +227,12 @@ export class D3mainComponent implements OnInit {
         .attr("cx", d.cx)
         .attr("cy", d.cy);
     });
+
+    d3.select("svg").append("circle")
+      .attr("class", "earth")
+      .attr("cx", 500)
+      .attr("cy", 500)
+      .attr("r", 35);
 
     // allSatelites.attr("cx", function(d) { return d.cx; });
     // allSatelites.attr("cy", function(d) { return d.cy; });

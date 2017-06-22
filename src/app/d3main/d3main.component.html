@@ -3,47 +3,73 @@
   <h2><em>Satellites, the junk in our skies</em></h2>
 </div>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+					<div class="navbar-form">
+        <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Select an Account Div + A <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Hollywood Account</a></li>
+            <li><a href="#">Another Account</a></li>
+            <li><a href="#">Yet another Account</a></li>
+          </ul>
+        </div>
+					</div>
+        </li>
+        <li class="dropdown">
+					<form class="navbar-form">
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Select an Account Form + Button <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Hollywood Account</a></li>
+            <li><a href="#">Another Account</a></li>
+            <li><a href="#">Yet another Account</a></li>
+          </ul>
+        </div>
+					</form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 
 <div class="filter row">
   <p class="filters">Countries</p>
   <select (change)="onCountrySelectChange($event.target.value)">
-    <option value="none" selected="selected">None</option>
-    <option value="USA">USA</option>
-    <option value="ESA">European Space Agency</option>
-    <option value="China">China</option>
-    <option value="Russia">Russia</option>
-    <option value="United Kingdom">United Kingdom</option>
-    <option value="Japan">Japan</option>
+    <option value="ALL">ALL Countries</option>
+    <option value="Argentina">Argentina</option>
     <option value="Canada">Canada</option>
-    <option value="Multinational">Multinational</option>
+    <option value="China">China</option>
+    <option value="ESA">European Space Agency</option>
     <option value="France">France</option>
     <option value="Germany">Germany</option>
     <option value="India">India</option>
-    <option value="Spain">Spain</option>
+    <option value="Japan">Japan</option>
+    <option value="Multinational">Multinational</option>
+    <option value="Russia">Russia</option>
     <option value="Saudi Arabia">Saudi Arabia</option>
-    <option value="ALL">ALL Countries</option>
+    <option value="Spain">Spain</option>
+    <option value="United Kingdom">United Kingdom</option>
+    <option value="USA">USA</option>
+    <option value="none" selected="selected">None</option>
   </select>
 
   <p class="filters">Purpose</p>
   <select (change)="onPurposeSelectChange($event.target.value)">
-    <option value="none" selected="selected">None</option>
+    <option value="ALL">ALL Purposes</option>
     <option value="Communications">Communications</option>
-    <option value="Space Observation">Space Observation</option>
-    <option value="Space Science">Space Science</option>
     <option value="Earth Observation">Earth Observation</option>
     <option value="Earth Science">Earth Science</option>
-    <option value="Technology Development">Technology Development</option>
     <option value="Navigation/Global Positioning">Navigation/Global Positioning</option>
+    <option value="Space Observation">Space Observation</option>
+    <option value="Space Science">Space Science</option>
     <option value="Technology Development">Technology Development</option>
-    <option value="ALL">ALL Purposes</option>
+    <option value="none" selected="selected">None</option>
   </select>
-
-  <br>
-  <br>
-
-  <label>New Slider:</label>
-  <input type="range" min="1970" max="2016" value=1970 step="1" (change)="showMinValue($event.target.value)" />
-  <span id="range">{{minBarValue}}</span>
 
   <button id="orbitBtn" class="btn btn-success" (click)="orbitButtonClicked()">Orbit</button>
   <button id="graphBtn" class="btn btn-info" (click)="graphClicked()">Graph</button>
@@ -52,10 +78,20 @@
 </div>
 
   <div id="lowEarthOrbit">
-    <div id="earthImg"></div>
       <svg [ngClass]='themeStatus' id="thisSvg">
-        <!-- <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
-        <svg:circle class="start"></svg:circle> -->
+
+        <!-- define fill patterns for earth -->
+        <defs>
+          <pattern id="sphere" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
+            <image height="100" width="100" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/70/Sphere_rotating.gif"></image>
+          </pattern>
+          <pattern id="earth" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
+            <image height="100" width="100" xlink:href="https://robinsonrobert21.files.wordpress.com/2016/03/earth-spinning-rotating-animation-24.gif?w=150"></image>
+          </pattern>
+        </defs>
+
+        <circle r="50" cx="500" cy="500" fill="url(#sphere)" class="sphere"></circle>
+        <circle r="50" cx="500" cy="500" fill="url(#earth)" ></circle>
       </svg>
   </div>
 
@@ -64,10 +100,12 @@
     <div class="col-md-4">
 
     </div>
-    <div class="col-md-4 github">
-      <a href="https://github.com/Umitosan" target="_blank"><img src="../../../assets/img/dom-github.png" alt="github-dom"></a>
-      <a href="https://github.com/kenr16" target="_blank"><img src="../../../assets/img/ken-github.png" alt="github-ken"></a>
-      <a href="https://github.com/nrsantamaria" target="_blank"><img src="../../../assets/img/nicky-github.png" alt="github-nicky"></a>
+    <div class="col-md-4">
+      <div class="center-block">
+        <a href="https://github.com/Umitosan" target="_blank"><img class="github" src="../../../assets/img/dom-github.png" alt="github-dom"></a>
+        <a href="https://github.com/kenr16" target="_blank"><img class="github" src="../../../assets/img/ken-github.png" alt="github-ken"></a>
+        <a href="https://github.com/nrsantamaria" target="_blank"><img class="github" src="../../../assets/img/nicky-github.png" alt="github-nicky"></a>
+      </div>
     </div>
     <div class="col-md-4 sources">
       <h2>Source</h2>

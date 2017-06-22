@@ -16,13 +16,19 @@
   background-image: url("../../assets/img/stars-bg.gif");
 }
 
-.github img {
-  margin: 0 auto;
+.center-block {
+  margin-left: 25%;
+}
+
+.github {
   width: 100px;
 }
 
-.sources h2 {
+.sources {
+  padding-left: 5%;
   text-align: left;
+}
+.sources h2 {
   font-family: 'Source Code Pro', monospace;
   color: white;
 }
