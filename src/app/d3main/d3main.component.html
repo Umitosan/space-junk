@@ -2,96 +2,67 @@
   <h1>Space Junk</h1>
   <h2><em>Satellites, the junk in our skies</em></h2>
 </div>
+<div class="navigation">
+  <nav class="navbar navbar-default form-inline">
+    <div class="form-group form-inline">
+      <label class="form-inline filters">Countries</label>
+      <select (change)="onCountrySelectChange($event.target.value)">
+        <option value="ALL">ALL Countries</option>
+        <option value="Canada">Canada</option>
+        <option value="China">China</option>
+        <option value="ESA">European Space Agency</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="India">India</option>
+        <option value="Japan">Japan</option>
+        <option value="Multinational">Multinational</option>
+        <option value="Russia">Russia</option>
+        <option value="Spain">Spain</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="USA">USA</option>
+        <option value="none" selected="selected">None</option>
+      </select>
+    </div>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+    <div class="form-group form-inline">
+      <label class="filters">Purpose</label>
+      <select (change)="onPurposeSelectChange($event.target.value)">
+        <option value="ALL">ALL Purposes</option>
+        <option value="Communications">Communications</option>
+        <option value="Earth Observation">Earth Observation</option>
+        <option value="Earth Science">Earth Science</option>
+        <option value="Navigation/Global Positioning">Navigation/Global Positioning</option>
+        <option value="Space Observation">Space Observation</option>
+        <option value="Space Science">Space Science</option>
+        <option value="Technology Development">Technology Development</option>
+        <option value="none" selected="selected">None</option>
+      </select>
+    </div>
 
-        <li class="dropdown">
-					<div class="navbar-form">
-        <div class="btn-group">
-            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Select an Account Div + A <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Hollywood Account</a></li>
-            <li><a href="#">Another Account</a></li>
-            <li><a href="#">Yet another Account</a></li>
-          </ul>
-        </div>
-					</div>
-        </li>
 
-        <li class="dropdown">
-					<form class="navbar-form">
-        <div class="btn-group">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Select an Account Form + Button <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Hollywood Account</a></li>
-            <li><a href="#">Another Account</a></li>
-            <li><a href="#">Yet another Account</a></li>
-          </ul>
-        </div>
-					</form>
-        </li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-
-<div class="filter row">
-  <p class="filters">Countries</p>
-  <select (change)="onCountrySelectChange($event.target.value)">
-    <option value="ALL">ALL Countries</option>
-    <option value="Canada">Canada</option>
-    <option value="China">China</option>
-    <option value="ESA">European Space Agency</option>
-    <option value="France">France</option>
-    <option value="Germany">Germany</option>
-    <option value="India">India</option>
-    <option value="Japan">Japan</option>
-    <option value="Multinational">Multinational</option>
-    <option value="Russia">Russia</option>
-    <option value="Spain">Spain</option>
-    <option value="United Kingdom">United Kingdom</option>
-    <option value="USA">USA</option>
-    <option value="none" selected="selected">None</option>
-  </select>
-
-  <p class="filters">Purpose</p>
-  <select (change)="onPurposeSelectChange($event.target.value)">
-    <option value="ALL">ALL Purposes</option>
-    <option value="Communications">Communications</option>
-    <option value="Earth Observation">Earth Observation</option>
-    <option value="Earth Science">Earth Science</option>
-    <option value="Navigation/Global Positioning">Navigation/Global Positioning</option>
-    <option value="Space Observation">Space Observation</option>
-    <option value="Space Science">Space Science</option>
-    <option value="Technology Development">Technology Development</option>
-    <option value="none" selected="selected">None</option>
-  </select>
-
-  <button id="orbitBtn" class="btn btn-success" (click)="orbitButtonClicked()">Orbit</button>
-  <button id="graphBtn" class="btn btn-info" (click)="graphClicked()">Graph</button>
-  <button id="offBtn" class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
-  <button id="onBtn" class="btn btn-warning" (click)="turnLightsOn()">Lights On</button>
+    <button id="orbitBtn" class="btn btn-success" (click)="orbitButtonClicked()">Orbit</button>
+    <button id="graphBtn" class="btn btn-info" (click)="graphClicked()">Graph</button>
+    <button id="offBtn" class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
+    <button id="onBtn" class="btn btn-default" (click)="turnLightsOn()">Lights On</button>
+  </nav>
 </div>
+
 
   <div id="lowEarthOrbit">
       <svg [ngClass]='themeStatus' id="thisSvg">
         <g>
         <!-- define fill patterns for earth -->
-        <defs>
-          <!-- <pattern id="sphere" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
+        <!-- <defs>
+          <pattern id="sphere" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
             <image height="100" width="100" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/70/Sphere_rotating.gif"></image>
-          </pattern> -->
+          </pattern>
           <pattern id="earth" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
             <image height="100" width="100" xlink:href="https://robinsonrobert21.files.wordpress.com/2016/03/earth-spinning-rotating-animation-24.gif?w=150"></image>
           </pattern>
-        </defs>
+        </defs> -->
 
-        <!-- <circle r="50" cx="500" cy="500" fill="url(#sphere)" class="sphere"></circle> -->
-        
+        <circle r="50" cx="500" cy="500" fill="url(#earth)" class="sphere"></circle>
+
         </g>
       </svg>
   </div>
