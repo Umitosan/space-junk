@@ -269,6 +269,10 @@ export class D3mainComponent implements OnInit {
     };
 
     var masterTimer = d3.timer(updateAnim);
+
+
+
+
   } // END satInit
 
 
@@ -276,7 +280,6 @@ export class D3mainComponent implements OnInit {
   scatterPlot(satData, myd3) {
     let d3 = myd3;
     let svg = d3.select("svg");
-
 
     // var xScale = d3.scale.linear()
     // .domain([0, 800])
@@ -287,6 +290,28 @@ export class D3mainComponent implements OnInit {
     // .range([-350, 150]);
 
 
+
+
+    var newScale = d3.scaleLinear().range([1970,2016]).domain([0,1498400000]);
+    var xScale = d3.scaleLinear().range([0,1200]).domain([1970,2016]);
+    var yScale = d3.scaleLinear().range([0,200]).domain([0,200]);
+
+    var thisDate = "4/25/2016";
+
+
+    var xAxis = d3.axisBottom().scale(xScale);
+
+    var yAxis = d3.axisLeft().scale(yScale);
+
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(700,450)")
+      .call(xAxis);
+
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(700,250)")
+      .call(yAxis);
 
     var satelites = d3.selectAll(".satelite")
         .data(satData)
@@ -299,10 +324,11 @@ export class D3mainComponent implements OnInit {
 
     satelites.attr("cx", function(d) {
       // return (Date.parse(d.date))/10000000000;
-      return (Math.floor(Math.random() * 600)+200);
+      return (Date.parse(d.date)/1150000000)+100;
+      // return (Math.floor(Math.random() * 600)+200);
     })
     .attr("cy", function(d) {
-      return (Math.floor(Math.random() * 400)-450);
+      return (Math.floor(Math.random() * 180)-240);
     })
     ;
 
