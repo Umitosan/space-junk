@@ -52,6 +52,26 @@ export class D3mainComponent implements OnInit {
               });
   } // END ngOnInit()
 
+  filterSatData() {
+    let countryOpt = this.countrySelected;
+    let purposeOpt = this.purposeSelected;
+    let satsToBeFiltered: Satellite[] = this.satellites;
+    let filteredSats1: Satellite[] = [];
+    let filteredSats2: Satellite[] = [];
+    // run through filters depending on which changed
+    if (countryOpt !== 'none') {
+      filteredSats1 = this.countryPipeTransform(satsToBeFiltered, countryOpt);
+      filteredSats2 = filteredSats1;
+      if (purposeOpt !== 'none') {
+        filteredSats2 = this.purposePipeTransform(filteredSats1, purposeOpt);
+      }
+    } else {
+      filteredSats2 = this.purposePipeTransform(satsToBeFiltered, purposeOpt);
+    }
+    this.satData = filteredSats2;
+    console.log("filteredSats2 length= ", filteredSats2.length);
+  }
+
   createSatData(satArr) {
     let myArr: any[] = [];
     let counter = 0;
@@ -92,7 +112,7 @@ export class D3mainComponent implements OnInit {
   }
 
   startButtonClicked() {
-    let sats: Satellite[] = this.satData;
+    let sats: Satellite[] = [];
     if (this.readyToDisplay === true) {
       this.filterSatData();
       this.createSatData(this.satData)
@@ -118,26 +138,6 @@ export class D3mainComponent implements OnInit {
     this.readyToDisplay = true;
   }
 
-  filterSatData() {
-    let countryOpt = this.countrySelected;
-    let purposeOpt = this.purposeSelected;
-    let satsToBeFiltered: Satellite[] = this.satellites;
-    let filteredSats1: Satellite[] = [];
-    let filteredSats2: Satellite[] = [];
-    // run through filters depending on which changed
-    if (countryOpt !== 'none') {
-      filteredSats1 = this.countryPipeTransform(satsToBeFiltered, countryOpt);
-      filteredSats2 = filteredSats1;
-      if (purposeOpt !== 'none') {
-        filteredSats2 = this.purposePipeTransform(filteredSats1, purposeOpt);
-      }
-    } else {
-      filteredSats2 = this.purposePipeTransform(satsToBeFiltered, purposeOpt);
-    }
-    this.satData = filteredSats2;
-    console.log("filteredSats2 length= ", filteredSats2.length);
-  }
-
   turnLightsOff() {
     this.themeStatus = "lightsOff";
   }
@@ -157,11 +157,11 @@ export class D3mainComponent implements OnInit {
     // let newObject = this.newObject;
 
 
-    let svg = d3.select("svg")
-      .call(d3.zoom().on("zoom", function () {
-         svg.attr("transform", d3.event.transform)
-      }))
-      .append("g");
+    let svg = d3.select("svg");
+      // .call(d3.zoom().on("zoom", function () {
+      //    svg.attr("transform", d3.event.transform)
+      // }))
+      // .append("g");
 
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -296,6 +296,39 @@ export class D3mainComponent implements OnInit {
     //   //   .attr("cy", d.cy);
     // });
   }
+
+  // scatterPlot() {
+  //   let d3 = this.d3;
+  //   let svg = d3.select("svg");
+  //   this.running = false;
+  //   d3.selectAll(".satelite")
+  //     .classed("satelite", false);
+  //   var satelites = d3.selectAll("circle")
+  //
+  //   satelites.transition()
+  //       .delay(0)
+  //       .duration(1000)
+  //       .attr("cx", function(d) {
+  //
+  //         return (Date.parse("2/5/2016"))/10000000000;
+  //         // return 100;
+  //       })
+  //       .attr("cy", function(d) {
+  //
+  //         return 100;
+  //       })
+  //       .attr("transform", function(d) {
+  //           return "rotate(0)";
+  //       });
+  //   // satelites.attr("transform", function(d) {
+  //   //   // d3.select(this)
+  //   //   // .transition()
+  //   //   //   .delay(0)
+  //   //   //   .duration(1000)
+  //   //   //   .attr("cx", d.cx)
+  //   //   //   .attr("cy", d.cy);
+  //   // });
+  // }
 
 
 } // END D3mainComponent
