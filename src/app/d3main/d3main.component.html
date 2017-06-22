@@ -3,7 +3,7 @@
   <h2><em>Satellites, the junk in our skies</em></h2>
 </div>
 <div class="navigation">
-  <nav class="navbar navbar-default form-inline">
+  <nav [ngClass]='themeStatus2' class="navbar navbar-default form-inline">
     <div class="form-group form-inline">
       <label class="form-inline filters">Countries</label>
       <select (change)="onCountrySelectChange($event.target.value)">

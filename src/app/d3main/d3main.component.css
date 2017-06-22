@@ -8,6 +8,17 @@
   display:block;
   margin:auto;
   width: 2000px;
+
+}
+
+.navDark {
+  background-color: black;
+  border-color: black;
+}
+
+.navLight {
+  background-color: white;
+  border-color: white;
 }
 
 .navbar {

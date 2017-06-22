@@ -30,6 +30,7 @@ export class D3mainComponent implements OnInit {
   running = true;
 
   themeStatus: string = "lightsOff";
+  themeStatus2: string = "navDark";
 
   constructor(element: ElementRef, d3Service: D3Service, private router: Router,
               private database: AngularFireDatabase, private satelliteService: SatelliteService,
@@ -80,7 +81,7 @@ export class D3mainComponent implements OnInit {
       let randSpeed: number = this.getRandomNum(3,20);
 
       let calcRad: number = ((satArr[i].LaunchMassKG**(1/3))/3)+1.7;
-      let powerApogee: number = (Math.pow(satArr[i].ApogeeKM, 1/2) + 50);
+      let powerApogee: number = (Math.pow(satArr[i].ApogeeKM, 1/2)*2 + 50);
       let randCx: number = this.getRandomNum(1,powerApogee);
       let calcCY: number = Math.pow(( (powerApogee**2) - (randCx**2) ) ,1/2);
 
@@ -130,10 +131,12 @@ export class D3mainComponent implements OnInit {
 
   turnLightsOff() {
     this.themeStatus = "lightsOff";
+    this.themeStatus2 = "navDark";
   }
 
   turnLightsOn() {
     this.themeStatus = "lightsOn";
+    this.themeStatus2 = "navLight";
   }
 
   onCountrySelectChange(dropdownOption) {
@@ -293,8 +296,6 @@ export class D3mainComponent implements OnInit {
 
   } // END satInit
 
-
-
   scatterPlot(satData, myd3) {
     let d3 = myd3;
     let svg = d3.select("svg")
@@ -359,7 +360,5 @@ export class D3mainComponent implements OnInit {
   // .attr("transform", function(d) {
   //     return "rotate(0)";
   // });
-
-
 
 } // END D3mainComponent
