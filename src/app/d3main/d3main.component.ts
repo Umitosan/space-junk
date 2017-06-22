@@ -63,9 +63,13 @@ export class D3mainComponent implements OnInit {
       let randCx: number = this.getRandomNum(1,powerApogee);
       let calcCY: number = Math.pow(( (powerApogee**2) - (randCx**2) ) ,1/2);
 
-      if (counter > 3) {
 
-      }
+
+      if (counter == 1) { randCx *= -1; }
+      else if (counter == 2) { calcCY *= -1; }
+      else if (counter == 3) { randCx *= -1; calcCY *= -1;}
+      if (counter > 3) { counter = 0; }
+      counter++;
 
       let dateOfLaunch: string = satArr[i].DateOfLaunch;
 
@@ -146,8 +150,10 @@ export class D3mainComponent implements OnInit {
     this.themeStatus = "lightsOn";
   }
 
+
   satInit(myd3) {
     let d3 = myd3;
+
     // clear all cirlces before creating new ones
     d3.selectAll("circle").remove();
 
@@ -277,6 +283,7 @@ export class D3mainComponent implements OnInit {
       .classed("satelite", false);
     var satelites = d3.selectAll("circle")
 
+
     satelites.transition()
         .delay(0)
         .duration(1000)
@@ -287,7 +294,7 @@ export class D3mainComponent implements OnInit {
         })
         .attr("cy", function(d) {
 
-          return 100;
+          return 0;
         })
         .attr("transform", function(d) {
             return "rotate(0)";

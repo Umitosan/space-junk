@@ -39,6 +39,10 @@
   <br>
   <br>
 
+  <label>New Slider:</label>
+  <input type="range" min="1970" max="2016" value=1970 step="1" (change)="showMinValue($event.target.value)" />
+  <span id="range">{{minBarValue}}</span>
+
   <button class="btn btn-success" (click)="startButtonClicked()">Start</button>
   <button class="btn btn-info" (click)="anotherOneClicked()">Another One</button>
   <button class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
