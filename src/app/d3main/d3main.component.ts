@@ -125,7 +125,7 @@ export class D3mainComponent implements OnInit {
   }
 
   graphClicked() {
-    console.log("Graph Activated");
+    // console.log("Graph Activated");
     this.scatterPlot(this.satData, this.d3);
   }
 
@@ -141,13 +141,13 @@ export class D3mainComponent implements OnInit {
 
   onCountrySelectChange(dropdownOption) {
     this.countrySelected = dropdownOption;
-    console.log("country opt: ", this.countrySelected);
+    // console.log("country opt: ", this.countrySelected);
     this.readyToDisplay = true;
   }
 
   onPurposeSelectChange(dropdownOption) {
     this.purposeSelected = dropdownOption;
-    console.log("country opt: ", this.purposeSelected);
+    // console.log("country opt: ", this.purposeSelected);
     this.readyToDisplay = true;
   }
 
@@ -158,23 +158,19 @@ export class D3mainComponent implements OnInit {
     d3.selectAll("circle").remove();
 
     let satData = this.satData;
-    console.log("init data length", satData.length);
+    // console.log("init data length", satData.length);
     // let newObject = this.newObject;
 
     let svg = d3.select("svg")
-      .call(d3.zoom().on("zoom", function () {
-         svg.attr("transform", d3.event.transform)
-      }))
+      // .call(d3.zoom().on("zoom", function () {
+      //    svg.attr("transform", d3.event.transform)
+      // }))
       .append("g")
       ;
-
-
 
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
-
-
 
     //for each item in satData create a new satelite circle element
     svg.selectAll()
