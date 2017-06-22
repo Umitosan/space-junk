@@ -3,6 +3,40 @@
   <h2><em>Satellites, the junk in our skies</em></h2>
 </div>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+					<div class="navbar-form">
+        <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Select an Account Div + A <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Hollywood Account</a></li>
+            <li><a href="#">Another Account</a></li>
+            <li><a href="#">Yet another Account</a></li>
+          </ul>
+        </div>
+					</div>
+        </li>
+        <li class="dropdown">
+					<form class="navbar-form">
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Select an Account Form + Button <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Hollywood Account</a></li>
+            <li><a href="#">Another Account</a></li>
+            <li><a href="#">Yet another Account</a></li>
+          </ul>
+        </div>
+					</form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
 <div class="filter row">
   <p class="filters">Countries</p>
   <select (change)="onCountrySelectChange($event.target.value)">
