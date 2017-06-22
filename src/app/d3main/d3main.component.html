@@ -45,10 +45,10 @@
   <input type="range" min="1970" max="2016" value=1970 step="1" (change)="showMinValue($event.target.value)" />
   <span id="range">{{minBarValue}}</span>
 
-  <button class="btn btn-success" (click)="startButtonClicked()">Start</button>
-  <button class="btn btn-info" (click)="anotherOneClicked()">Another One</button>
-  <button class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
-  <button class="btn btn-warning" (click)="turnLightsOn()">Lights On</button>
+  <button id="orbitBtn" class="btn btn-success" (click)="orbitButtonClicked()">Orbit</button>
+  <button id="graphBtn" class="btn btn-info" (click)="graphClicked()">Graph</button>
+  <button id="offBtn" class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
+  <button id="onBtn" class="btn btn-warning" (click)="turnLightsOn()">Lights On</button>
 </div>
 
   <div id="lowEarthOrbit">
@@ -58,22 +58,6 @@
         <svg:circle class="start"></svg:circle> -->
       </svg>
   </div>
-
-<app-d3output>Loading...</app-d3output>
-
-
-<!-- public Name: string,
-public CountryOperatorOwner: string,
-public OperatorOwner: string,
-public Users: string,
-public Purpose: string,
-public ApogeeKM: number,
-public LaunchMassKG: number,
-public DateOfLaunch: string,
-public LaunchSite: string -->
-
-
-<!-- {{(satToDisplay | async)?.Name}} -->
 
 <div class="footer jumbotron">
   <div class="row">

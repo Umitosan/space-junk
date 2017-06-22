@@ -25,6 +25,7 @@ export class D3mainComponent implements OnInit {
   countrySelected: string = "none";
   purposeSelected: string = "none";
 
+  filterdSatData: Satellite[] = [];
   satData: any[] = [];
   running = true;
 
@@ -68,11 +69,11 @@ export class D3mainComponent implements OnInit {
     } else {
       filteredSats2 = this.purposePipeTransform(satsToBeFiltered, purposeOpt);
     }
-    this.satData = filteredSats2;
-    console.log("filteredSats2 length= ", filteredSats2.length);
+    this.filterdSatData = filteredSats2;
   }
 
-  createSatData(satArr) {
+  createSatData() {
+    let satArr: Satellite[] = this.filterdSatData;
     let myArr: any[] = [];
     let counter = 0;
     for (let i = 0; i < satArr.length ; i++) {
@@ -82,8 +83,6 @@ export class D3mainComponent implements OnInit {
       let powerApogee: number = (Math.pow(satArr[i].ApogeeKM, 1/2) + 50);
       let randCx: number = this.getRandomNum(1,powerApogee);
       let calcCY: number = Math.pow(( (powerApogee**2) - (randCx**2) ) ,1/2);
-
-
 
       if (counter == 1) { randCx *= -1; }
       else if (counter == 2) { calcCY *= -1; }
@@ -115,19 +114,26 @@ export class D3mainComponent implements OnInit {
     return Math.random() * (max - min) + min;
   }
 
-  startButtonClicked() {
-    let sats: Satellite[] = [];
+  orbitButtonClicked() {
     if (this.readyToDisplay === true) {
       this.filterSatData();
-      this.createSatData(this.satData)
+      this.createSatData()
       this.satInit(this.d3);
       this.readyToDisplay = false;
     }
   }
 
-  anotherOneClicked() {
+  graphClicked() {
     console.log("anotherOneClicked yup");
     this.scatterPlot(this.satData);
+  }
+
+  turnLightsOff() {
+    this.themeStatus = "lightsOff";
+  }
+
+  turnLightsOn() {
+    this.themeStatus = "lightsOn";
   }
 
   onCountrySelectChange(dropdownOption) {
@@ -142,32 +148,21 @@ export class D3mainComponent implements OnInit {
     this.readyToDisplay = true;
   }
 
-  turnLightsOff() {
-    this.themeStatus = "lightsOff";
-  }
-
-  turnLightsOn() {
-    this.themeStatus = "lightsOn";
-  }
-
-
   satInit(myd3) {
     let d3 = myd3;
 
     // clear all cirlces before creating new ones
     d3.selectAll("circle").remove();
 
-
     let satData = this.satData;
     console.log("init data length", satData.length);
     // let newObject = this.newObject;
 
-
-    let svg = d3.select("svg");
+    let svg = d3.select("svg")
       // .call(d3.zoom().on("zoom", function () {
       //    svg.attr("transform", d3.event.transform)
       // }))
-      // .append("g");
+      .append("g");
 
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
