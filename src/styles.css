@@ -3,7 +3,6 @@ html body {
   background-color: black;
 }
 
-
 .lightsOn {
   background-color: white;
   background-image: url('./../Sphererotating.gif');
@@ -43,16 +42,24 @@ circle {
   fill : none;
 }
 
-#myBtn {
-  margin-left: 40px;
-  margin-top: 40px;
-  float: left;
+#startBtn {
+  margin-left: 20px;
+  /*float: left;*/
 }
 
-#anotherOne {
-  margin-left: 20px;
-  margin-top: 40px;
-  float: left;
+#graphBtn {
+  margin-left: 5px;
+  /*float: left;*/
+}
+
+#offBtn {
+  margin-left: 5px;
+  /*float: left;*/
+}
+
+#onBtn {
+  margin-left: 5px;
+  /*float: left;*/
 }
 
 div.tooltip {
