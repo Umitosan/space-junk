@@ -3,22 +3,27 @@ html body {
   background-color: black;
 }
 
+svg {
+  display:block;
+  margin:auto;
+}
+
+.sphere {
+  display: none;
+}
+
+.earth {
+  display: none;
+}
+
 .lightsOn {
   background-color: white;
-  background-image: url('./../Sphererotating.gif');
-  background-repeat: no-repeat;
-  background-size: 100px;
-  background-position: 1200px 600px;
   width: 2000px;
   height: 1200px;
 }
 
 .lightsOff {
   background-color: black;
-  background-image: url('./../earth_anim.gif');
-  background-repeat: no-repeat;
-  background-size: 100px;
-  background-position: 1200px 600px;
   width: 2000px;
   height: 1200px;
 }
@@ -35,11 +40,6 @@ html body {
 
 circle {
   stroke : #000000;
-}
-
-.earth {
-  stroke : none;
-  fill : none;
 }
 
 #startBtn {

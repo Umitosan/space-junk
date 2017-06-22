@@ -3,7 +3,6 @@
   <h2><em>Satellites, the junk in our skies</em></h2>
 </div>
 
-
 <div class="filter row">
   <p class="filters">Countries</p>
   <select (change)="onCountrySelectChange($event.target.value)">
@@ -20,7 +19,7 @@
     <option value="Russia">Russia</option>
     <option value="Saudi Arabia">Saudi Arabia</option>
     <option value="Spain">Spain</option>
-    <option value="United Kingdome">United Kingdom</option>
+    <option value="United Kingdom">United Kingdom</option>
     <option value="USA">USA</option>
     <option value="none" selected="selected">None</option>
   </select>
@@ -38,13 +37,6 @@
     <option value="none" selected="selected">None</option>
   </select>
 
-  <br>
-  <br>
-
-  <label>New Slider:</label>
-  <input type="range" min="1970" max="2016" value=1970 step="1" (change)="showMinValue($event.target.value)" />
-  <span id="range">{{minBarValue}}</span>
-
   <button id="orbitBtn" class="btn btn-success" (click)="orbitButtonClicked()">Orbit</button>
   <button id="graphBtn" class="btn btn-info" (click)="graphClicked()">Graph</button>
   <button id="offBtn" class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
@@ -52,10 +44,19 @@
 </div>
 
   <div id="lowEarthOrbit">
-    <div id="earthImg"></div>
       <svg [ngClass]='themeStatus' id="thisSvg">
-        <!-- <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
-        <svg:circle class="start"></svg:circle> -->
+        <!-- define fill patterns for earth -->
+        <defs>
+          <pattern id="sphere" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
+            <image height="100" width="100" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/70/Sphere_rotating.gif"></image>
+          </pattern>
+          <pattern id="earth" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
+            <image height="100" width="100" xlink:href="https://robinsonrobert21.files.wordpress.com/2016/03/earth-spinning-rotating-animation-24.gif?w=150"></image>
+          </pattern>
+        </defs>
+
+        <circle r="50" cx="500" cy="500" fill="url(#sphere)" class="sphere"></circle>
+        <circle r="50" cx="500" cy="500" fill="url(#earth)" ></circle>
       </svg>
   </div>
 

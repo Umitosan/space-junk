@@ -159,10 +159,12 @@ export class D3mainComponent implements OnInit {
     // let newObject = this.newObject;
 
     let svg = d3.select("svg")
-      // .call(d3.zoom().on("zoom", function () {
-      //    svg.attr("transform", d3.event.transform)
-      // }))
+      .call(d3.zoom().on("zoom", function () {
+         svg.attr("transform", d3.event.transform)
+      }))
       .append("g");
+
+
 
     let div = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -176,30 +178,30 @@ export class D3mainComponent implements OnInit {
         .enter().append("circle")
         .attr("class", "satelite");
 
-    let allSatelites = svg.selectAll(".satelite")
+    let allSatelites = svg.selectAll(".satelite").style("opacity", 0.6);
 
     // color by country
     allSatelites.style("fill", function(d) {
       if(d.owner === 'USA') {
-        return "#0042B2";
+        return "#33ccff";
       } else if (d.owner === 'Russia') {
-        return "#662700";
+        return "#cc0000";
       } else if (d.owner === 'Multinational') {
         return "white";
       } else if (d.owner === 'China') {
-        return "#B20015";
+        return "#ffff33";
       } else if (d.owner === 'United Kingdom') {
-        return "#19FBFF";
+        return "#99ebff";
       } else if (d.owner === 'Japan') {
-        return "#B24300";
+        return "#ff0000";
       } else if (d.owner === 'ESA') {
-        return "#006466";
+        return "#3399ff";
       } else if (d.owner === 'Germany') {
-        return "#AF133B";
+        return "#00cc2c";
       } else if (d.owner === 'India') {
         return "#B27F12";
       } else if (d.owner === 'France') {
-        return "#C700CB";
+        return "#ff33cc";
       } else if (d.owner === 'Canada') {
           return "#BF0031";
       } else if (d.owner === 'Argentina') {
@@ -244,6 +246,8 @@ export class D3mainComponent implements OnInit {
 
     function updateAnim() {
 
+
+
       svg.selectAll(".satelite").attr("transform", function(d) {
         if (d.move === true) {
           return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
@@ -260,7 +264,7 @@ export class D3mainComponent implements OnInit {
     // show data bubble
     allSatelites.on("mouseover", function(d) {
       d3.select(this)
-      .style("stroke", "black").style("stroke-width", 5);
+      .style("stroke", "gold").style("stroke-width", 6);
       running = false;
       div.transition()
           .duration(200)
@@ -317,7 +321,6 @@ export class D3mainComponent implements OnInit {
         .delay(0)
         .duration(1000)
         .attr("cx", function(d) {
-
           return (Date.parse("2/5/2016"))/10000000000;
           // return 100;
         })

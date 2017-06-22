@@ -24,8 +24,11 @@
   width: 100px;
 }
 
-.sources h2 {
+.sources {
+  padding-left: 5%;
   text-align: left;
+}
+.sources h2 {
   font-family: 'Source Code Pro', monospace;
   color: white;
 }
