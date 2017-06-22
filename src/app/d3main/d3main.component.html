@@ -9,18 +9,18 @@
   <select (change)="onCountrySelectChange($event.target.value)">
     <option value="none" selected="selected">None</option>
     <option value="USA">USA</option>
-    <option value="Argentina">Argentina</option>
-    <option value="Canada">Canada</option>
+    <option value="ESA">European Space Agency</option>
     <option value="China">China</option>
-    <option value="Multinational">Multinational</option>
-    <option value="Japan">Japan</option>
     <option value="Russia">Russia</option>
+    <option value="United Kingdom">United Kingdom</option>
+    <option value="Japan">Japan</option>
+    <option value="Canada">Canada</option>
+    <option value="Multinational">Multinational</option>
+    <option value="France">France</option>
     <option value="Germany">Germany</option>
     <option value="India">India</option>
-    <option value="ESA">European Space Agency</option>
     <option value="Spain">Spain</option>
     <option value="Saudi Arabia">Saudi Arabia</option>
-    <option value="France">France</option>
     <option value="ALL">ALL Countries</option>
   </select>
 
@@ -56,6 +56,7 @@
       <svg [ngClass]='themeStatus' id="thisSvg">
         <!-- <svg:circle class="earth" cx="500" cy="500" r="35"></svg:circle>
         <svg:circle class="start"></svg:circle> -->
+         <circle r="35" cx="500" cy="500"></circle>
       </svg>
   </div>
 
