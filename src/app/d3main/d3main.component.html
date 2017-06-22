@@ -80,18 +80,19 @@
   <div id="lowEarthOrbit">
       <svg [ngClass]='themeStatus' id="thisSvg">
         <g>
-        <!-- define fill patterns for earth -->
+          <!-- define fill patterns for earth -->
         <defs>
-          <!-- <pattern id="sphere" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
+          <pattern id="sphere" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
             <image height="100" width="100" xlink:href="https://upload.wikimedia.org/wikipedia/commons/7/70/Sphere_rotating.gif"></image>
-          </pattern> -->
+          </pattern>
           <pattern id="earth" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
             <image height="100" width="100" xlink:href="https://robinsonrobert21.files.wordpress.com/2016/03/earth-spinning-rotating-animation-24.gif?w=150"></image>
           </pattern>
         </defs>
 
-        <!-- <circle r="50" cx="500" cy="500" fill="url(#sphere)" class="sphere"></circle> -->
-        
+        <circle r="50" cx="500" cy="500" fill="url(#sphere)" class="sphere"></circle>
+        <circle r="50" cx="500" cy="500" fill="url(#earth)" ></circle>
+
         </g>
       </svg>
   </div>
