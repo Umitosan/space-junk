@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# SpaceJunk - the satellites in our skies
-=======
 # SpaceJunk - The satellites in our skies
->>>>>>> bcfa8d4e75c198fecf5e1419e6c106e8dffe64c6
 
 ![screenshot](screenshot1.png)
 
