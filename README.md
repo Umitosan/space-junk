@@ -1,4 +1,6 @@
-# SpaceJunk
+# SpaceJunk - The satellites in our skies
+
+![screenshot](screenshot1.png)
 
 #### _**By Ken Rutan**_, _**Nicky Santamaria**_, _**Dominic Brown**_
 
