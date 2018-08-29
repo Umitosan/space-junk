@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { D3Service, D3, Selection } from 'd3-ng2-service'; // <-- import the D3 Service, the type alias for the d3 letiable and the Selection interface
 import { Satellite } from '../satellite.model';
 import { SatelliteService } from '../satellite.service';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+// import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { CountryPipe } from '../country.pipe';
 import { PurposePipe } from '../purpose.pipe';
 
@@ -32,8 +32,11 @@ export class D3mainComponent implements OnInit {
   themeStatus: string = "lightsOff";
   themeStatus2: string = "navDark";
 
-  constructor(element: ElementRef, d3Service: D3Service, private router: Router,
-              private database: AngularFireDatabase, private satelliteService: SatelliteService,
+  // constructor(element: ElementRef, d3Service: D3Service, private router: Router,
+  //             private database: AngularFireDatabase, private satelliteService: SatelliteService,
+  //             countryPipe: CountryPipe, purposePipe: PurposePipe
+  //             ) {
+  constructor(element: ElementRef, d3Service: D3Service, private router: Router, private satelliteService: SatelliteService,
               countryPipe: CountryPipe, purposePipe: PurposePipe
               ) {
         this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service

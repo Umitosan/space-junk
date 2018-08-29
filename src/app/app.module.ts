@@ -8,6 +8,7 @@ import { routing } from './app.routing';
 
 import { D3Service } from 'd3-ng2-service';
 
+// firebase related
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -16,6 +17,7 @@ import { D3mainComponent } from './d3main/d3main.component';
 import { D3outputComponent } from './d3output/d3output.component';
 import { CountryPipe } from './country.pipe';
 import { PurposePipe } from './purpose.pipe';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
