@@ -1,58 +1,64 @@
-<div class="header jumbotron">
-  <h1>Space Junk</h1>
-  <h2><em>Satellites, the junk in our skies</em></h2>
+<div class="header">
+  <div class="main-title">Space Junk</div>
+  <div class="main-title2"><em>Satellites in our skies</em></div>
 </div>
+
 <div class="navigation">
-  <nav [ngClass]='themeStatus2' class="navbar navbar-default form-inline">
-    <div class="form-group form-inline">
-      <label class="form-inline filters">Countries</label>
-      <select (change)="onCountrySelectChange($event.target.value)">
-        <option value="ALL">ALL Countries</option>
-        <option value="Canada">Canada</option>
-        <option value="China">China</option>
-        <option value="ESA">European Space Agency</option>
-        <option value="France">France</option>
-        <option value="Germany">Germany</option>
-        <option value="India">India</option>
-        <option value="Japan">Japan</option>
-        <option value="Multinational">Multinational</option>
-        <option value="Russia">Russia</option>
-        <option value="Spain">Spain</option>
-        <option value="United Kingdom">United Kingdom</option>
-        <option value="USA">USA</option>
-        <option value="none" selected="selected">None</option>
-      </select>
-    </div>
 
-    <div class="form-group form-inline">
-      <label class="filters">Purpose</label>
-      <select (change)="onPurposeSelectChange($event.target.value)">
-        <option value="ALL">ALL Purposes</option>
-        <option value="Communications">Communications</option>
-        <option value="Earth Observation">Earth Observation</option>
-        <option value="Earth Science">Earth Science</option>
-        <option value="Navigation/Global Positioning">Navigation/Global Positioning</option>
-        <option value="Space Observation">Space Observation</option>
-        <option value="Space Science">Space Science</option>
-        <option value="Technology Development">Technology Development</option>
-        <option value="none" selected="selected">None</option>
-      </select>
-    </div>
+  <div class="instruct-contain">
+    <div id="instruct">1. Select an option from dropdowns  2. click orbit 3. graph(turn lights on)</div>
+  </div>
 
+  <div class="btn-contain">
     <button id="orbitBtn" class="btn btn-success" (click)="orbitButtonClicked()">Orbit</button>
     <button id="graphBtn" class="btn btn-info" (click)="graphClicked()">Graph</button>
     <button id="offBtn" class="btn btn-primary" (click)="turnLightsOff()">Lights Off</button>
     <button id="onBtn" class="btn btn-default" (click)="turnLightsOn()">Lights On</button>
+  </div>
 
-    <p id="instruct">Select with dropdowns -> click orbit -> graph(turn lights on)</p>
-  </nav>
+  <div class="nav-contain">
+    <nav class="navbar navbar-default form-inline">
+      <div class="form-group form-inline">
+        <label class="form-inline filters">Countries</label>
+        <select (change)="onCountrySelectChange($event.target.value)">
+          <option value="ALL">ALL Countries</option>
+          <option value="Canada">Canada</option>
+          <option value="China">China</option>
+          <option value="ESA">European Space Agency</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany</option>
+          <option value="India">India</option>
+          <option value="Japan">Japan</option>
+          <option value="Multinational">Multinational</option>
+          <option value="Russia">Russia</option>
+          <option value="Spain">Spain</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="USA">USA</option>
+          <option value="none" selected="selected">None</option>
+        </select>
+      </div>
+      <div class="form-group form-inline">
+        <label class="filters">Purpose</label>
+        <select (change)="onPurposeSelectChange($event.target.value)">
+          <option value="ALL">ALL Purposes</option>
+          <option value="Communications">Communications</option>
+          <option value="Earth Observation">Earth Observation</option>
+          <option value="Earth Science">Earth Science</option>
+          <option value="Navigation/Global Positioning">Navigation/Global Positioning</option>
+          <option value="Space Observation">Space Observation</option>
+          <option value="Space Science">Space Science</option>
+          <option value="Technology Development">Technology Development</option>
+          <option value="none" selected="selected">None</option>
+        </select>
+      </div>
+    </nav>
+  </div>
+
 </div>
-
 
   <div id="lowEarthOrbit">
       <svg [ngClass]='themeStatus' id="thisSvg">
         <g>
-
 
        <!-- define fill patterns for earth -->
         <defs>
@@ -62,7 +68,7 @@
           <pattern id="earth" x="50" y="50" height="100" width="100" patternUnits="userSpaceOnUse">
             <image height="100" width="100" xlink:href="https://robinsonrobert21.files.wordpress.com/2016/03/earth-spinning-rotating-animation-24.gif?w=150"></image>
           </pattern>
-        </defs> -->
+        </defs>
 
         <circle r="50" cx="500" cy="500" fill="url(#sphere)" class="sphere"></circle>
         <circle r="50" cx="500" cy="500" fill="url(#earth)" ></circle>
@@ -71,10 +77,9 @@
       </svg>
   </div>
 
-<div class="footer jumbotron">
+<div class="footer">
   <div class="row">
-    <div class="col-md-4">
-
+    <div class="col-md-2">
     </div>
     <div class="col-md-4">
       <div class="center-block">
@@ -84,8 +89,10 @@
       </div>
     </div>
     <div class="col-md-4 sources">
-      <h2>Source</h2>
+      <h2>Database Source</h2>
       <p><a href="http://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database" target="_blank">Union of Concerned Scientists</a></p>
+    </div>
+    <div class="col-md-2">
     </div>
   </div>
 </div>

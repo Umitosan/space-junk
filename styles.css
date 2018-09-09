@@ -2,8 +2,10 @@
 svg {
   width: 1500px;
   height: 1500px;
+  outline-color: red;
+  outline-style: solid;
+  outline-width: 2px;
 }
-
 
 .orbit {
   stroke : #000000;
@@ -43,4 +45,4 @@ div.tooltip {
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
-}*/
+}

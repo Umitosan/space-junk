@@ -3,11 +3,6 @@ html body {
   background-color: black;
 }
 
-svg {
-  display:block;
-  margin:auto;
-}
-
 .sphere {
   display: none;
 }
@@ -18,17 +13,8 @@ svg {
 
 .lightsOn {
   background-color: white;
-
   width: 2000px;
   height: 1200px;
-
-/*   background-image: url('./../Sphererotating.gif');
-  background-repeat: no-repeat;
-  background-size: 100px;
-  background-position: 450px 450px;
-  width: 2000px;
-  height: 1000px; */
-
 }
 
 .lightsOff {
@@ -53,22 +39,18 @@ circle {
 
 #startBtn {
   margin-left: 20px;
-  /*float: left;*/
 }
 
 #graphBtn {
   margin-left: 5px;
-  /*float: left;*/
 }
 
 #offBtn {
   margin-left: 5px;
-  /*float: left;*/
 }
 
 #onBtn {
   margin-left: 5px;
-  /*float: left;*/
 }
 
 div.tooltip {

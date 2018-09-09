@@ -1,14 +1,63 @@
-.header h1, .header h2 {
+.header {
+  background-image: url("../../assets/img/stars-bg.gif");
+  height: 200px;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+
+.main-title, .main-title2 {
   text-align: center;
+  width: 400px;
   font-family: 'Source Code Pro', monospace;
   color: white;
 }
 
-.navigation {
-  display:block;
-  margin:auto;
-  width: 2000px;
+.main-title {
+  height: 100px;
+  margin: 0px auto 0px auto;
+  padding-top: 10px;
+  font-size: 56px;
+}
 
+.main-title2 {
+  height: 60px;
+  margin: 10px auto 0px auto;
+  font-size: 30px;
+}
+
+.navigation {
+  margin: 0px auto 0px auto;
+  height: 180px;
+  width: 1000px;
+  display: block;
+  /* outline-color: red;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+
+.nav-contain {
+  width: 600px;
+  margin: 0px auto 0px auto;
+  background-color: black;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+
+.nav-contain nav {
+  background-color: black;
+  border-color: none;
+  border-radius: 0px;
+  border-width: 0px;
+}
+
+.nav-contain .form-group {
+  margin: 0px 6px 0px 6px;
+}
+
+.nav-contain label {
+  margin-right: 4px;
 }
 
 .navDark {
@@ -21,18 +70,31 @@
   border-color: white;
 }
 
-.navbar {
-  padding: 1%;
-  padding-left: 70px;
-  margin-bottom: 0 !important;
+.instruct-contain {
+  height: 40px;
+  width: 670px;
+  margin: 0px auto 0px auto;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
 }
-
 #instruct {
   display: inline;
   padding-left: 30px;
   font-size: 20px;
-
   color: grey;
+}
+
+.btn-contain {
+  height: 40px;
+  width: 327px;
+  margin: 0px auto 0px auto;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+.btn-contain button {
+  margin: auto 3px auto 3px;
 }
 
 .filter {
@@ -43,12 +105,21 @@
   color: white;
 }
 
-.jumbotron {
-  background-image: url("../../assets/img/stars-bg.gif");
+.filters {
+  color: grey;
+  font-size: 20px;
+}
+
+.btn-primary {
+  background-color: black;
 }
 
 .center-block {
   margin-left: 25%;
+}
+
+#thisSvg {
+  margin: 0px auto 0px auto;
 }
 
 .github {
@@ -59,20 +130,13 @@
   padding-left: 5%;
   text-align: left;
 }
+
 .sources h2 {
   font-family: 'Source Code Pro', monospace;
   color: white;
 }
 
 .footer {
-  margin-bottom: 0 !important;
-}
-
-.filters {
-  color: grey;
-  font-size: 20px;
-}
-
-.btn-primary {
-  background-color: black;
+  height: 200px;
+  background-image: url("../../assets/img/stars-bg.gif");
 }
