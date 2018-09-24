@@ -169,6 +169,18 @@ export class D3mainComponent implements OnInit {
     let masterRad = 0;
     let running = this.running;
 
+    function updateAnim() {
+      svg.selectAll(".satelite").attr("transform", function(d) {
+        if (d.move === true) {
+          return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
+        } else {
+          return "translate(500,500)";
+        }
+      });
+      if (masterRad === 10000) { masterRad = 0; }
+      if (running === true) {  masterRad += 1; }
+    } // END updateAnim
+
     // clear all cirlces before creating new ones
     d3.selectAll("circle").remove();
 
@@ -237,19 +249,6 @@ export class D3mainComponent implements OnInit {
       .attr("cy", 500)
       .attr("r", 50);
 
-    function updateAnim() {
-      svg.selectAll(".satelite").attr("transform", function(d) {
-        if (d.move === true) {
-          return "translate(500,500), rotate(" + (masterRad * d.speed/100) + ")";
-        } else {
-          return "translate(500,500)";
-        }
-
-      });
-      if (masterRad === 10000) { masterRad = 0; }
-      if (running === true) {  masterRad += 1; }
-    } // END updateAnim
-
     // define sat tooltip mouse hover event
     allSatelites.on("mouseover", function(d) {
       d3.select(this)
@@ -258,7 +257,9 @@ export class D3mainComponent implements OnInit {
       div.transition()
           .duration(200)
           .style("opacity", .9);
-      div	.html("<strong> Name: </strong>" + d.name + "<br/> <strong> Country: </strong>" + d.owner)
+      div	.html("<strong> Name: </strong>" + d.name +
+                "<br/> <strong> Country: </strong>" + d.owner +
+                "<br/> <strong> Launch Date: </strong>" + d.date)
           .style("left", (d3.event.pageX) + "px")
           .style("top", (d3.event.pageY - 28) + "px");
     })
@@ -277,39 +278,58 @@ export class D3mainComponent implements OnInit {
   scatterPlot(sd,d) {
     let d3 = d;
     let satData = sd;
-    let svg = d3.select("svg").call( d3.zoom().on("zoom", function () {}) );
+    let svg = d3.select("svg");
+    svg.call( d3.zoom().on("zoom", function () {}) );
+    let xRangeWidth = 800;
+    let yMin = 150;
 
-    let xScale = d3.scaleLinear().range([0,1200]).domain([1970,2016]);
-    let yScale = d3.scaleLinear().range([0,200]).domain([0,200]);
-    let thisDate = "4/25/2016";
-    let xAxis = d3.axisBottom().scale(xScale);
-    let yAxis = d3.axisLeft().scale(yScale);
+    // var newScale = d3.scaleLinear().range([1970,2016]).domain([0,1498400000]);
+    var xScale = d3.scaleLinear().range([0,xRangeWidth]).domain([1970,2020]);
+    var yScale = d3.scaleLinear().range([0,200]).domain([0,200]);
+    var xAxis = d3.axisBottom().scale(xScale);
+    var yAxis = d3.axisLeft().scale(yScale);
 
     svg.append("g")
               .attr("class", "axis")
-              .attr("transform", "translate(700,450)")
+              .attr("transform", "translate(100,350)") // define where the axis gets painted to svg element
               .call(xAxis);
 
     svg.append("g")
               .attr("class", "axis")
-              .attr("transform", "translate(700,250)")
+              .attr("transform", "translate(100,"+yMin+")") // define where the axis gets painted to svg element
               .call(yAxis);
 
-    let satelites = d3.selectAll(".satelite");
-    satelites.data(satData)
+    // rotate the dots slightly back along thier orbits for effet
+    var satelites = d3.selectAll(".satelite")
+              .data(satData)
               .attr("class", "orbitalObject")
               .classed("satelite", false)
               .transition()
               .delay(0)
               .duration(1000)
-              .attr("transform", "translate(500,500), rotate(0)");
+              .attr("transform", "translate(500,500), rotate(-25)"); // rotate back 25 degrees
 
+    // this trasition determines the location of each sat dot on the graph based on date launched
+    let getr = this.getRandomNum; // temp funk
     satelites.transition().attr("cx", function(d) {
-      return (Date.parse(d.date)/1150000000)+100;
+      console.log("d.date = ", d.date);
+      // console.log("Date.parse(d.date) = ", Date.parse(d.date));
+      let leftPixOffset = 100;
+      // d.data =  milliseconds since January 1, 1970
+      // 31536000000 ms = 1 year
+      let yearsSince1970 = (Date.parse(d.date)/31536000000);
+      // console.log('yearsSince1970 =  ', yearsSince1970);
+      let pixPerYear = (xRangeWidth/(2020-1970));
+      // console.log('pixPerYear =  ', pixPerYear);
+      let xPosition = (pixPerYear*yearsSince1970)+leftPixOffset;
+      // console.log('xPosition =  ', xPosition);
+      return xPosition;
     })
     .attr("cy", function(d) {
-      return (Math.floor(Math.random() * 180)-240);
-    });
+      let randN = getr(10,190); // random Y axis value minus 10 so it doesnt' overlap the x-axis
+      return (randN + yMin);
+    })
+    .attr("transform", "translate(0,0)"); // reset the corner of svg for graph
 
   } // scatterPlot
 

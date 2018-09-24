@@ -31,18 +31,12 @@
   height: 180px;
   width: 1000px;
   display: block;
-  /* outline-color: red;
-  outline-width: 1px;
-  outline-style: solid; */
 }
 
 .nav-contain {
   width: 730px;
   margin: 20px auto 0px auto;
   background-color: black;
-  /* outline-color: green;
-  outline-width: 1px;
-  outline-style: solid; */
 }
 
 .nav-contain nav {
@@ -77,9 +71,6 @@
   height: 40px;
   width: 670px;
   margin: 0px auto 0px auto;
-  /* outline-color: green;
-  outline-width: 1px;
-  outline-style: solid; */
 }
 #instruct {
   display: inline;
@@ -132,9 +123,9 @@
 #thisSvg {
   width: 1000px;
   margin: 0px 100px 0px 100px;
-  outline-color: green;
+  /* outline-color: green;
   outline-width: 1px;
-  outline-style: solid;
+  outline-style: solid; */
 }
 
 .github {
