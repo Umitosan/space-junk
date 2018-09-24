@@ -28,7 +28,7 @@ function mainFunk() {
       .enter().append("circle")
       .attr("class", "satelite");
 
-  var allSatelites = svg.selectAll(".satelite")
+  var allSatelites = svg.selectAll(".satelite");
   // allSatelites.attr("cx", function(d) { return d.cx; });
   // allSatelites.attr("cy", function(d) { return d.cy; });
   // allSatelites.attr("r", function(d) { return d.rad; });
@@ -79,7 +79,7 @@ function mainFunk() {
           .data(satData, function(d, i) { return (i); } )
           .enter().append("circle")
           .attr("class", "satelite");
-      var allSatelites = svg.selectAll(".satelite")
+      var allSatelites = svg.selectAll(".satelite");
       // allSatelites.attr("cx", function(d) { return d.cx; });
       // allSatelites.attr("cy", function(d) { return d.cy; });
       // allSatelites.attr("r", function(d) { return d.rad; });
@@ -115,18 +115,17 @@ function mainFunk() {
   allSatelites.on("mouseover", function(d) {
     d3.select(this)
     .style("stroke", "gold")
-    .style("stroke-width", 3)
-    // .style("fill", "white");
+    .style("stroke-width", 3);
 
     running = false;
     console.log(d);
     div.transition()
         .duration(200)
-        .style("opacity", .9);
+        .style("opacity", 0.9);
     div	.html(d.name + "<br/>"  + d.owner)
         .style("left", (d3.event.pageX) + "px")
         .style("top", (d3.event.pageY - 28) + "px");
-  })
+  });
 
   allSatelites.on("mouseout", hideData);
 
@@ -134,16 +133,13 @@ function mainFunk() {
   function hideData(){
     d3.select(this)
     .style("stroke", "black")
-    .style("stroke-width", 1)
-    // .style("fill", "steelblue");
+    .style("stroke-width", 1);
     running = true;
-    // for (var i = 0; i<satData.length; i++)	{
-    // 	console.log(satData[i]['move']=false);
-    // };
+
     div.transition()
         .duration(500)
         .style("opacity", 0);
-  };
+  }
 
 }
 

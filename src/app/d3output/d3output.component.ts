@@ -18,7 +18,7 @@ export class D3outputComponent implements OnInit {
               private router: Router,
               private satelliteService: SatelliteService) {
     this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 Service
-    console.log('this.d3 = ', this.d3);
+    // console.log('this.d3 = ', this.d3);
   }
 
   ngOnInit() {

@@ -37,8 +37,8 @@
 }
 
 .nav-contain {
-  width: 600px;
-  margin: 0px auto 0px auto;
+  width: 730px;
+  margin: 20px auto 0px auto;
   background-color: black;
   /* outline-color: green;
   outline-width: 1px;
@@ -53,7 +53,10 @@
 }
 
 .nav-contain .form-group {
-  margin: 0px 6px 0px 6px;
+  margin: 0px 20px 0px 20px;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
 }
 
 .nav-contain label {
@@ -118,8 +121,20 @@
   margin-left: 25%;
 }
 
+#lowEarthOrbit {
+  width: 1200px;
+  margin: 0px auto;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+
 #thisSvg {
-  margin: 0px auto 0px auto;
+  width: 1000px;
+  margin: 0px 100px 0px 100px;
+  outline-color: green;
+  outline-width: 1px;
+  outline-style: solid;
 }
 
 .github {
