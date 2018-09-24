@@ -1,3 +1,9 @@
+
+/* Fonts
+font-family: 'Source Code Pro', monospace;
+ */
+
+
 .header {
   background-image: url("../../assets/img/stars-bg.gif");
   height: 200px;
@@ -8,9 +14,12 @@
 
 .main-title, .main-title2 {
   text-align: center;
-  width: 400px;
+  width: 430px;
   font-family: 'Source Code Pro', monospace;
   color: white;
+  outline-color: green;
+  outline-width: 1px;
+  outline-style: solid;
 }
 
 .main-title {
