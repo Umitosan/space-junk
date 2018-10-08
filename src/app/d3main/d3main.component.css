@@ -7,6 +7,7 @@ font-family: 'Source Code Pro', monospace;
 .header {
   background-image: url("../../assets/img/stars-bg.gif");
   height: 200px;
+  min-width: 1000px;
   /* outline-color: green;
   outline-width: 1px;
   outline-style: solid; */
@@ -17,9 +18,9 @@ font-family: 'Source Code Pro', monospace;
   width: 430px;
   font-family: 'Source Code Pro', monospace;
   color: white;
-  outline-color: green;
+  /* outline-color: green;
   outline-width: 1px;
-  outline-style: solid;
+  outline-style: solid; */
 }
 
 .main-title {
@@ -37,22 +38,73 @@ font-family: 'Source Code Pro', monospace;
 
 .navigation {
   margin: 0px auto 0px auto;
-  height: 180px;
+  height: 200px;
   width: 1000px;
   display: block;
+  /* outline-color: yellow;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+
+.instruct-title {
+  text-align: center;
+  font-size: 24px;
+}
+.instruct-contain {
+  height: 80px;
+  width: 800px;
+  margin: 0px auto 0px auto;
+  color: darkgrey;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+#instruct-list {
+  font-size: 16px;
+  text-align: center;
+  /* outline-color: red;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+.instruct-item {
+  display: inline-flex;
+  margin: 0px 10px 0px 10px;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+
+
+.btn-contain {
+  height: 40px;
+  width: 330px;
+  margin: 12px auto 12px auto;
+  /* outline-color: blue;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+.btn-contain button {
+  margin: auto 3px auto 3px;
 }
 
 .nav-contain {
   width: 730px;
-  margin: 20px auto 0px auto;
+  margin: 0px auto 0px auto;
   background-color: black;
+  /* outline-color: red;
+  outline-width: 1px;
+  outline-style: solid; */
 }
 
 .nav-contain nav {
   background-color: black;
-  border-color: none;
+  /* border-color: none;
   border-radius: 0px;
-  border-width: 0px;
+  border-width: 0px; */
+}
+
+.form-contain {
+  display: flex;
 }
 
 .nav-contain .form-group {
@@ -76,30 +128,6 @@ font-family: 'Source Code Pro', monospace;
   border-color: white;
 }
 
-.instruct-contain {
-  height: 40px;
-  width: 670px;
-  margin: 0px auto 0px auto;
-}
-#instruct {
-  display: inline;
-  padding-left: 30px;
-  font-size: 20px;
-  color: grey;
-}
-
-.btn-contain {
-  height: 40px;
-  width: 327px;
-  margin: 0px auto 0px auto;
-  /* outline-color: green;
-  outline-width: 1px;
-  outline-style: solid; */
-}
-.btn-contain button {
-  margin: auto 3px auto 3px;
-}
-
 .filter {
   padding-left: 5%;
 }
@@ -117,12 +145,10 @@ font-family: 'Source Code Pro', monospace;
   background-color: black;
 }
 
-.center-block {
-  margin-left: 25%;
-}
+
 
 #lowEarthOrbit {
-  width: 1200px;
+  width: 1040px;
   margin: 0px auto;
   /* outline-color: green;
   outline-width: 1px;
@@ -131,27 +157,56 @@ font-family: 'Source Code Pro', monospace;
 
 #thisSvg {
   width: 1000px;
-  margin: 0px 100px 0px 100px;
+  height: 1000px;
+  margin: 2px 20px 0px 20px;
+  border-radius: 12px;
+  border-style: none;
+  border-width: 0px;
+  border-color: white;
   /* outline-color: green;
   outline-width: 1px;
   outline-style: solid; */
 }
 
+.footer {
+  width: 100%;
+  height: auto;
+}
+.center-block {
+  display: flex;
+  width: 720px;
+  margin: 0px auto 0px auto;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+.github-block {
+  width: 320px;
+  margin: 0px 50px 0px 0px;
+  /* outline-color: red;
+  outline-width: 1px;
+  outline-style: solid; */
+}
 .github {
   width: 100px;
 }
 
-.sources {
-  padding-left: 5%;
-  text-align: left;
+.sources-block {
+  text-align: right;
+  margin: 0px 0px 0px 0px;
+  color: white;
+  width: 350px;
+  /* outline-color: blue;
+  outline-width: 1px;
+  outline-style: solid; */
 }
-
-.sources h2 {
+.sources-block h2 {
   font-family: 'Source Code Pro', monospace;
   color: white;
 }
 
 .footer {
+  min-width: 1000px;
   height: 200px;
   background-image: url("../../assets/img/stars-bg.gif");
 }

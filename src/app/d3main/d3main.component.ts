@@ -312,7 +312,7 @@ export class D3mainComponent implements OnInit {
     // this trasition determines the location of each sat dot on the graph based on date launched
     let getr = this.getRandomNum; // temp funk
     satelites.transition().attr("cx", function(d) {
-      console.log("d.date = ", d.date);
+      // console.log("d.date = ", d.date);
       // console.log("Date.parse(d.date) = ", Date.parse(d.date));
       let leftPixOffset = 100;
       // d.data =  milliseconds since January 1, 1970
@@ -333,12 +333,12 @@ export class D3mainComponent implements OnInit {
 
   } // scatterPlot
 
-  testOrbit() {
+  resetAll() {
     console.log('test clicked');
-    this.unScatter(this.satData, this.d3);
+    // this.unScatter(this.satData, this.d3);
   }
   unScatter(satData,myd3) {
-    let d3 = myd3;
+    // let d3 = myd3;
 
     // let newSat = {  name: satArr[i].Name ,
     //                 owner: satArr[i].CountryOperatorOwner,
