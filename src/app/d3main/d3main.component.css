@@ -3,6 +3,9 @@
 font-family: 'Source Code Pro', monospace;
  */
 
+ /* Colors
+alt-grey: #292f33
+ */
 
 .header {
   background-image: url("../../assets/img/stars-bg.gif");
@@ -38,7 +41,7 @@ font-family: 'Source Code Pro', monospace;
 
 .navigation {
   margin: 0px auto 0px auto;
-  height: 200px;
+  height: auto;
   width: 1000px;
   display: block;
   /* outline-color: yellow;
@@ -51,8 +54,8 @@ font-family: 'Source Code Pro', monospace;
   font-size: 24px;
 }
 .instruct-contain {
-  height: 80px;
   width: 800px;
+  height: auto;
   margin: 0px auto 0px auto;
   color: darkgrey;
   /* outline-color: green;
@@ -67,7 +70,7 @@ font-family: 'Source Code Pro', monospace;
   outline-style: solid; */
 }
 .instruct-item {
-  display: inline-flex;
+  /* display: inline-flex; */
   margin: 0px 10px 0px 10px;
   /* outline-color: green;
   outline-width: 1px;
@@ -155,6 +158,7 @@ font-family: 'Source Code Pro', monospace;
   outline-style: solid; */
 }
 
+
 #thisSvg {
   width: 1000px;
   height: 1000px;
@@ -171,38 +175,69 @@ font-family: 'Source Code Pro', monospace;
 .footer {
   width: 100%;
   height: auto;
+  padding-top: 30px;
 }
 .center-block {
-  display: flex;
-  width: 720px;
   margin: 0px auto 0px auto;
+  height: 160px;
+  display: flex;
+  width: 800px;
+  color: darkgrey;
+  font-family: 'Source Code Pro', monospace;
   /* outline-color: green;
   outline-width: 1px;
   outline-style: solid; */
 }
 .github-block {
-  width: 320px;
-  margin: 0px 50px 0px 0px;
-  /* outline-color: red;
+  width: 400px;
+  margin: 0px 0px 0px 0px;
+  display: flex;
+  padding-top: 20px;
+  /* outline-color: green;
   outline-width: 1px;
   outline-style: solid; */
 }
+.auth-title {
+  font-size: 22px;
+  margin-top: 30px;
+}
+.auth-title img {
+  background-color: black;
+}
 .github {
   width: 100px;
+  background-color: black;
 }
 
 .sources-block {
-  text-align: right;
   margin: 0px 0px 0px 0px;
-  color: white;
-  width: 350px;
+  padding-top: 30px;
+  width: 400px;
+  /* outline-color: yellow;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+.sources-title {
+  width: 270px;
+  font-size: 28px;
+  height: auto;
+  /* outline-color: green;
+  outline-width: 1px;
+  outline-style: solid; */
+}
+.sources-link {
+  width: 200px;
+  font-size: 18px;
+  height: auto;
   /* outline-color: blue;
   outline-width: 1px;
   outline-style: solid; */
 }
-.sources-block h2 {
-  font-family: 'Source Code Pro', monospace;
-  color: white;
+.sources-title, .sources-link {
+  margin-left: auto;
+  margin-right: 0px;
+  text-align: right;
+  background-color: black;
 }
 
 .footer {
