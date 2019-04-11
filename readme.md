@@ -10,6 +10,8 @@ A small app demonstrating the use of D3.js to visualize satellite data.
 
 Union of Concerned Scientists [Satellite Database](http://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database#.WUgEwBMrLgE)
 
+* [Live Site](http://www.spacejunk.dombrown.net/)
+
 ## Technologies used / Prerequisites
 
 * Angular2
